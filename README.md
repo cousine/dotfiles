@@ -18,3 +18,7 @@ $ install.zsh
 
 NOTE: THIS MAY MESS UP YOUR SETUP, BE SURE YOU UNDERSTAND WHAT YOU ARE INSTALLING
 BEFORE RUNNING THIS SCRIPT!
+
+## VIM Cheat Sheet
+
+A VIM cheat sheet is available [here]( ./vim_cheat_sheet.md )
