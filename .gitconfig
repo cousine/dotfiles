@@ -1,0 +1,18 @@
+[user]
+	name = Omar Mekky
+	email = alphaengine@gmail.com
+[github]
+	user = cousine
+[core]
+	excludesfile = /Users/cousine/.gitignore_global
+[color]
+	ui = true
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
+[push]
+	default = simple
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
