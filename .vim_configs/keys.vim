@@ -84,7 +84,6 @@ nnoremap <leader>' :call g:CursorHistBack()<CR>
 
 " Snips and completion fix
 let g:UltiSnipsExpandTrigger="<C-space>"
-let g:UltiSnipsListSnippets="<C-j>"
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " FZF
