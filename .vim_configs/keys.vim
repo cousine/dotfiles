@@ -21,10 +21,10 @@ nnoremap <silent> <C-\> <C-w>v<C-w>left
 nnoremap <silent> <C-_> :split<cr>
 nnoremap <silent> <C-x> <C-w>q
 nnoremap <silent> <leader>= <C-w>=
-nnoremap <silent> <leader>j :resize -5<cr>
-nnoremap <silent> <leader>k :resize +5<cr>
-nnoremap <silent> <leader>h :vertical resize +5<cr>
-nnoremap <silent> <leader>l :vertical resize -5<cr>
+nnoremap <silent> <leader>jj :resize -5<cr>
+nnoremap <silent> <leader>kk :resize +5<cr>
+nnoremap <silent> <leader>hh :vertical resize +5<cr>
+nnoremap <silent> <leader>ll :vertical resize -5<cr>
 
 " Navigation
 nnoremap <silent> <C-left> :wincmd h<cr>
@@ -34,9 +34,10 @@ nnoremap <silent> <C-right> :wincmd l<cr>
 " Zoom window
 nnoremap <silent> <leader>z :ZoomToggle<CR>
 
-" Tab Navigation
+" Buffer Navigation
 nnoremap <silent> <leader>] :bn<cr>
 nnoremap <silent> <leader>[ :bp<cr>
+nnoremap <leader>q :Bdelete<CR>
 
 " Line Move
 let g:move_key_modifier = 'C'
@@ -46,15 +47,12 @@ noremap <leader>y "*y
 noremap <leader>yy "*Y
 
 " Delete into a blackhole
-noremap <leader>d "_d
 vnoremap <leader>d "_d
-vnoremap <leader>p "_dP
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>"
 
-" Split quit & search clear
-nnoremap <leader>q :Bdelete<CR>
+" Search clear
 nmap <SPACE> <SPACE>:noh<CR>
 
 " Save on double <Esc>
@@ -79,9 +77,6 @@ nmap <leader>t :TagbarToggle<CR>
 
 " Align text easily
 vnoremap <leader>t :Tab /
-
-" Show quick move highlights on f, F, t, T
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Cycle through cursor locations
 nnoremap <leader>` :call g:CursorHistForward()<CR>
@@ -112,3 +107,6 @@ map <leader>W :tabclose<CR>
 " Use gk and gj instead of k & j
 nmap k gk
 nmap j gj
+
+" Escape insert mode on jj
+imap jj <esc>

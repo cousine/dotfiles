@@ -124,3 +124,7 @@ set noshowmode
 " FuzzyFinder fzf
 let g:fzf_layout = { 'window': '10 split | enew' }
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+" Show quick move highlights on f, F, t, T
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
