@@ -70,6 +70,7 @@ plugins=(
   zsh-autosuggestions
   zsh-tmux-rename
   taskwarrior
+  emoji
 )
 
 fpath=($ZSH_CUSTOM/completions $fpath)
@@ -109,7 +110,7 @@ fi
 alias q="exit"
 
 #export TERM="xterm-256color"
-
+BULLETTRAIN_PROMPT_CHAR=$(random_emoji animals)
 BULLETTRAIN_PROMPT_ORDER=(
   context
   ruby
