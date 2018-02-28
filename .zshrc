@@ -69,6 +69,7 @@ plugins=(
   zsh-completions
   zsh-autosuggestions
   zsh-tmux-rename
+  taskwarrior
 )
 
 fpath=($ZSH_CUSTOM/completions $fpath)
