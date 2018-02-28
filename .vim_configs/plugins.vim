@@ -2,12 +2,13 @@
 " PLUGINS
 " ========================================================================
 
-command! PackUpdate packadd minpac | source $MYVIMRC | redraw | call minpac#update()
-command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+packadd minpac
 
 if !exists('*minpac#init')
   finish
 endif
+
+call minpac#init()
 
 " Add or remove your plugins here:
 " Git
@@ -161,4 +162,7 @@ call minpac#add('koron/nyancat-vim')
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
 filetype plugin indent on     " required!
+
+command! PackUpdate source $MYVIMRC | redraw | call minpac#update()
+command! PackClean  source $MYVIMRC | call minpac#clean()
 

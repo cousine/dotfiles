@@ -118,8 +118,12 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
-set completeopt-=preview
+"set completeopt-=preview
+set completeopt=longest,menuone
 set noshowmode
+
+" Supertab fix backward tab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " FuzzyFinder fzf
 let g:fzf_layout = { 'window': '10 split | enew' }
