@@ -128,3 +128,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " Show quick move highlights on f, F, t, T
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
+" TaskWarrior
+" default fields to ask when adding a new task
+let g:task_default_prompt  = ['project', 'description', 'priority', 'due']

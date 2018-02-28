@@ -110,3 +110,6 @@ nmap j gj
 
 " Escape insert mode on jj
 imap jj <esc>
+
+" TaskWarrior
+nmap <leader>tw :TW<CR>

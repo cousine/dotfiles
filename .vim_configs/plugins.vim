@@ -77,7 +77,7 @@ if dein#load_state('~/.vim/bundle')
   call dein#add('ap/vim-css-color') 
   " Retro color scheme
   call dein#add('morhetz/gruvbox') 
-   "Autoformat different languages
+  "Autoformat different languages
   "call dein#add('Chiel92/vim-autoformat') 
   " Preview Markdown
   call dein#add('nelstrom/vim-markdown-preview') 
@@ -132,6 +132,8 @@ if dein#load_state('~/.vim/bundle')
   " SCSS syntax
   call dein#add('cousine/scss-syntax.vim', {'name': 'scss'})
 
+  " Task Warrior Integration
+  call dein#add('blindFS/vim-taskwarrior')
 
   " You can specify revision/branch/tag.
   "call dein#add('Shougo/vimshell')

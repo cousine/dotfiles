@@ -14,6 +14,7 @@
 | `<C-t>`      | Toggle FZF for open buffers                      |
 | `,s`         | Save current session and create startify session |
 | `,v`         | In markdown files, launch browser preview        |
+| `,tw`        | Open taskwarrior                                 |
 
 ### NERDTree
 
