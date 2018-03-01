@@ -99,6 +99,9 @@ autocmd FileType markdown noremap <buffer> <leader>v :Preview<CR>
 " Show/Hide line special characters
 nmap <leader>l :set list!<CR>
 
+" Toggle relative number
+nnoremap <leader>rl :set relativenumber!<CR>
+
 " Tabs!!
 map <leader>T :tabe %<CR>
 map <leader>W :tabclose<CR>

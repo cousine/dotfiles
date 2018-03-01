@@ -63,13 +63,14 @@
 
 ### Text & Lines
 
-| Keys | Description                               |
-| ---  | ---                                       |
-| `,w` | Enable softwrap                           |
-| `,W` | Disable softwrap                          |
-| `,c` | Toggle max line length color column       |
-| `_$` | Remove trailing whitespace                |
-| `,l` | Toggle line special characters visibility |
+| Keys  | Description                               |
+| ---   | ---                                       |
+| `,w`  | Enable softwrap                           |
+| `,W`  | Disable softwrap                          |
+| `,c`  | Toggle max line length color column       |
+| `_$`  | Remove trailing whitespace                |
+| `,l`  | Toggle line special characters visibility |
+| `,rl` | Toggle relative line numbers              |
 
 ## INSERT MODE
 
@@ -81,10 +82,11 @@
 
 ## Snippets
 
+Only in insert mode
+
 | Keys        | Description                     |
 | ---         | ---                             |
 | `<C-Space>` | Expand matched snippet          |
-| `<C-j>`     | Show list of available snippets |
 
 ## VISUAL MODE
 
