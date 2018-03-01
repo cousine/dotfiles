@@ -110,8 +110,11 @@ fi
 alias q="exit"
 
 #export TERM="xterm-256color"
-BULLETTRAIN_PROMPT_CHAR=$(random_emoji animals)
+moji="$(random_emoji animals)\t"
+BULLETTRAIN_CUSTOM_BG=yellow
+BULLETTRAIN_CUSTOM_MSG=$moji
 BULLETTRAIN_PROMPT_ORDER=(
+  custom
   context
   ruby
   go
