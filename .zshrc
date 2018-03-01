@@ -110,7 +110,7 @@ fi
 alias q="exit"
 
 #export TERM="xterm-256color"
-moji="$(random_emoji animals)\t"
+moji="$(random_emoji_animal_face)\t"
 BULLETTRAIN_CUSTOM_BG=yellow
 BULLETTRAIN_CUSTOM_MSG=$moji
 BULLETTRAIN_PROMPT_ORDER=(
