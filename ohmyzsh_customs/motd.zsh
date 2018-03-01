@@ -4,14 +4,11 @@ motd() {
   if [[ -f "$HOME/motd" ]]; then
     cat $HOME/motd
   fi
+  
+  if [[ -f "$HOME/.motd.zsh" ]]; then
+    source $HOME/.motd.zsh
+  fi
 
-  wego
-
-  echo ""
-  echo "Your pending tasks:"
-  echo "==================="
-
-  task next
   return 0
 }
 
