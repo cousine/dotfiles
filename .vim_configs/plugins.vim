@@ -155,6 +155,9 @@ call minpac#add('kylef/apiblueprint.vim')
 " Yank highlight
 call minpac#add('machakann/vim-highlightedyank')
 
+" Elixir programming language
+call minpac#add("elixir-editors/vim-elixir")
+
 " FUN
 call minpac#add('koron/nyancat-vim')
 

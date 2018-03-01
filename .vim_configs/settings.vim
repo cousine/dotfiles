@@ -108,3 +108,5 @@ command! E e
 command! W w
 command! Wq wq
 
+" Add custom snippets folder to runtimepath
+set rtp+=~/.vim_configs/UltiSnips/
