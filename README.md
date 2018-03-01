@@ -1,5 +1,10 @@
 # Cousine's dotfiles
 
+## Screenshots
+
+![ZSH & Tmux](screenshots/zsh-tmux.png)
+![NeoVim](screenshots/neovim.png)
+
 ## Configurations includes
 
 * NeoVim (Vim should work too)
