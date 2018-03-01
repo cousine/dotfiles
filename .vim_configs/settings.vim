@@ -3,13 +3,14 @@
 " ========================================================================
 
 " Enable Syntax Highlighting
-syntax enable
-
+syntax on
 " Color Scheme
-set background=dark
-colorscheme tomorrow-night
+"colorscheme tomorrow-night
 "colorscheme gruvbox
 "colorscheme dracula
+let g:one_allow_italics = 1
+colorscheme one
+set background=dark
 
 " Adjust status line
 set laststatus=2
@@ -56,7 +57,7 @@ set virtualedit=onemore
 
 " Cursor line
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+"hi CursorLine term=bold cterm=bold guibg=Grey10
 
 set undofile
 set wildmenu

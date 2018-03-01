@@ -25,17 +25,17 @@ if filereadable(expand("~/.vim_configs/plugins.vim"))
 endif
 
 " ========================================================================
-" Vanilla Settings
-" ========================================================================
-if filereadable(expand("~/.vim_configs/settings.vim"))
-  source ~/.vim_configs/settings.vim
-endif
-
-" ========================================================================
 " NeoVim Specific Settings
 " ========================================================================
 if filereadable(expand("~/.vim_configs/neovim_settings.vim"))
   source ~/.vim_configs/neovim_settings.vim
+endif
+
+" ========================================================================
+" Vanilla Settings
+" ========================================================================
+if filereadable(expand("~/.vim_configs/settings.vim"))
+  source ~/.vim_configs/settings.vim
 endif
 
 " ========================================================================

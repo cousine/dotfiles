@@ -3,6 +3,7 @@
 " ========================================================================
 
 " Airline fonts
+let g:airline_theme='one'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = ''

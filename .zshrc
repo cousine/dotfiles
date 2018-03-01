@@ -111,13 +111,17 @@ alias q="exit"
 
 #export TERM="xterm-256color"
 moji="$(random_emoji_animal_face)\t"
-BULLETTRAIN_CUSTOM_BG=yellow
+BULLETTRAIN_CUSTOM_BG=220
 BULLETTRAIN_CUSTOM_MSG=$moji
+BULLETTRAIN_RUBY_FG=255
+BULLETTRAIN_DIR_FG=17
+BULLETTRAIN_CONTEXT_BG=8
+BULLETTRAIN_GIT_BG=255
+BULLETTRAIN_STATUS_FG=255
 BULLETTRAIN_PROMPT_ORDER=(
   custom
   context
   ruby
-  go
   dir
   git
   status

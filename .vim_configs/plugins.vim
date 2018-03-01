@@ -156,7 +156,10 @@ call minpac#add('kylef/apiblueprint.vim')
 call minpac#add('machakann/vim-highlightedyank')
 
 " Elixir programming language
-call minpac#add("elixir-editors/vim-elixir")
+call minpac#add('elixir-editors/vim-elixir')
+
+" Onedark theme
+call minpac#add('rakr/vim-one')
 
 " FUN
 call minpac#add('koron/nyancat-vim')
