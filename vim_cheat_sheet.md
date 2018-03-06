@@ -15,6 +15,7 @@
 | `,s`         | Save current session and create startify session |
 | `,v`         | In markdown files, launch browser preview        |
 | `,tw`        | Open taskwarrior                                 |
+| `gp`         | Select pasted text                               |
 
 ### NERDTree
 

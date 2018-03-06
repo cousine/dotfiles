@@ -46,6 +46,9 @@ let g:move_key_modifier = 'C'
 noremap <leader>y "*y
 noremap <leader>yy "*Y
 
+" Select pasted text
+nnoremap gp `[v`]
+
 " Delete into a blackhole
 vnoremap <leader>d "_d
 

@@ -161,6 +161,9 @@ call minpac#add('elixir-editors/vim-elixir')
 " Onedark theme
 call minpac#add('rakr/vim-one')
 
+" Unix shel sugar
+call minpac#add('tpope/vim-eunuch')
+
 " FUN
 call minpac#add('koron/nyancat-vim')
 
