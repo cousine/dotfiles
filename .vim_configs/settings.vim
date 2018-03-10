@@ -32,6 +32,9 @@ set showmatch
 set ruler
 set scrolloff=3
 
+" Set relative number by default
+set relativenumber
+
 " Search
 set hlsearch
 set incsearch
@@ -111,3 +114,6 @@ command! Wq wq
 
 " Add custom snippets folder to runtimepath
 set rtp+=~/.vim_configs/UltiSnips/
+
+" Session stuff
+set sessionoptions=blank,curdir,folds,help,tabpages,winpos

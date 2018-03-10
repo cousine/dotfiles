@@ -61,7 +61,7 @@ ZSH_CUSTOM=/Users/cousine/projects/dotfiles/cousine/ohmyzsh_customs
 plugins=(
   git
   bundler
-  rails
+  #rails
   colorize
   colored-man-pages
   cp

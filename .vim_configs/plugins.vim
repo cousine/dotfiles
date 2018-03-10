@@ -167,6 +167,9 @@ call minpac#add('tpope/vim-eunuch')
 " FUN
 call minpac#add('koron/nyancat-vim')
 
+" BufOnly
+call minpac#add('vim-scripts/BufOnly.vim')
+
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
