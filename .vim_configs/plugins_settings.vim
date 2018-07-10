@@ -88,15 +88,15 @@ let g:startify_session_before_save = [
         \ 'silent! NERDTreeClose'
         \ ]
 
-highlight StartifyBracket ctermfg=38
-highlight StartifyFooter  ctermfg=240
-highlight StartifyHeader  ctermfg=148 cterm=bold
-highlight StartifyNumber  ctermfg=38 cterm=bold
-highlight StartifyFile    ctermfg=1
-highlight StartifyPath    ctermfg=15
-highlight StartifySlash   ctermfg=240
-highlight StartifySpecial ctermfg=148
-highlight StartifySection ctermbg=148 ctermfg=22 cterm=bold
+highlight StartifyBracket ctermfg=38 guifg=#56b6c2
+highlight StartifyFooter  ctermfg=240 guifg=#585858
+highlight StartifyHeader  ctermfg=148 cterm=bold guifg=#98c379 gui=bold
+highlight StartifyNumber  ctermfg=38 cterm=bold guifg=#56b6c2 gui=bold
+highlight StartifyFile    ctermfg=1 guifg=#e06c75
+highlight StartifyPath    ctermfg=15 guifg=#FFFFFF
+highlight StartifySlash   ctermfg=240 guifg=#585858
+highlight StartifySpecial ctermfg=148 guifg=#98c379
+highlight StartifySection ctermbg=148 ctermfg=22 cterm=bold guibg=#98c379 guifg=#005f00 gui=bold
 
 " Golang
 let g:go_highlight_functions = 1
