@@ -8,7 +8,7 @@
 [color]
 	ui = true
 [mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [merge]
 	tool = fugitive
 [push]

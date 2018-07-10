@@ -111,8 +111,6 @@ call minpac#add('Shougo/echodoc.vim')
 " vim-scripts repos
 call minpac#add('vim-scripts/L9')
 call minpac#add('vim-scripts/surround.vim')
-" Smooth scrolling
-call minpac#add('yuttie/comfortable-motion.vim')
 
 " Dockerfile syntax
 call minpac#add('ekalinin/Dockerfile.vim')

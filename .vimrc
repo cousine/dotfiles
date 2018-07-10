@@ -18,6 +18,12 @@ if &compatible
 endif
 
 " ========================================================================
+" Load Python
+" ========================================================================
+let g:python_host_prog = '/Users/cousine/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/cousine/.pyenv/versions/neovim3/bin/python'
+
+" ========================================================================
 " Load Plugins
 " ========================================================================
 if filereadable(expand("~/.vim_configs/plugins.vim"))

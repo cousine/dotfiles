@@ -65,6 +65,7 @@ plugins=(
   colorize
   colored-man-pages
   cp
+  docker
   zsh-interactive-cd
   zsh-completions
   zsh-autosuggestions
@@ -135,3 +136,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 # Load SCM Breeze
 [ -s "/Users/cousine/.scm_breeze/scm_breeze.sh" ] && source "/Users/cousine/.scm_breeze/scm_breeze.sh"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/cousine/projects/gcloud/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/cousine/projects/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/cousine/projects/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/cousine/projects/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Pyenv virtualenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi

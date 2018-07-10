@@ -47,6 +47,8 @@ let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 " Close vim if only nerdtree open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Change CWD whenver NERDTree changes dir
+let NERDTreeChDirMode=2
 
 " GitGutter
 au VimEnter * GitGutterEnable
