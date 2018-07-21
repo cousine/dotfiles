@@ -147,5 +147,9 @@ if [ -f '/Users/cousine/projects/gcloud/google-cloud-sdk/completion.zsh.inc' ]; 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
+# Fix HOME and END key bindings
 bindkey "^[[1;2H" beginning-of-line
 bindkey "^[[1;2F" end-of-line
+
+# GPG agent
+export GPG_TTY=$(tty)

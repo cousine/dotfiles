@@ -1,17 +1,18 @@
+# mouse_face
+# tiger_face
+# dragon_face
+# horse_face
+# pig_face
+# frog_face
+# wolf_face
+# hamster_face
 emoji_groups[animal_faces]="
-  mouse_face
   cow_face
-  tiger_face
   rabbit_face
   cat_face
-  dragon_face
-  horse_face
   monkey_face
   dog_face
-  pig_face
-  frog_face
   hamster_face
-  wolf_face
   bear_face
 "
 
