@@ -1,0 +1,1 @@
+/home/cousine/projects/dotfiles/cousine-dotfiles/.vimrc

@@ -43,3 +43,6 @@ tags
 # End of https://www.gitignore.io/api/vim,macos
 
 secrets*
+
+arch-configs/nvim/pack
+arch-configs/pulse
