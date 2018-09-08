@@ -4,7 +4,9 @@ set $mod Mod4
 # Variables
 set $font "Sauce Code Pro Light Nerd Font Complete Mono 13"
 set $gaps 2
-set $term "kitty tmux new-session -A -s cousine-main"
+set $term "kitty tmux new-session"
+set $tmux "kitty tmux new-session -A -s cousine-main"
+set $tmux2 "kitty tmux new-session -A -s cousine-secondary"
 set $launcher "rofi -show run"
 set $fileExplorer "kitty ranger ~"
 set $musicplayer "kitty --name=__ncmpcpp ncmpcpp"
@@ -38,6 +40,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $tmux
+bindsym $mod+Ctrl+Return exec $tmux2
 
 # start a file explorer
 bindsym $mod+o exec $fileExplorer
