@@ -20,8 +20,8 @@ endif
 " ========================================================================
 " Load Python
 " ========================================================================
-let g:python_host_prog = '/Users/cousine/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/cousine/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'
 
 " ========================================================================
 " Load Plugins

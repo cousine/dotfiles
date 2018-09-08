@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/cousine/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,7 +52,7 @@ ZSH_THEME="bullet-train"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=/Users/cousine/projects/dotfiles/cousine/ohmyzsh_customs
+ZSH_CUSTOM=$HOME/projects/dotfiles/cousine-dotfiles/ohmyzsh_customs
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -128,28 +128,9 @@ BULLETTRAIN_PROMPT_ORDER=(
   status
 )
 
-source ~/.fzf.zsh
 PROJECT_PATHS=(~/projects)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 
-# Load SCM Breeze
-[ -s "/Users/cousine/.scm_breeze/scm_breeze.sh" ] && source "/Users/cousine/.scm_breeze/scm_breeze.sh"
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/cousine/projects/gcloud/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/cousine/projects/gcloud/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/cousine/projects/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/cousine/projects/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Pyenv virtualenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-# Fix HOME and END key bindings
-bindkey "^[[1;2H" beginning-of-line
-bindkey "^[[1;2F" end-of-line
-
-# GPG agent
-export GPG_TTY=$(tty)
+[ -s "/home/cousine/.scm_breeze/scm_breeze.sh" ] && source "/home/cousine/.scm_breeze/scm_breeze.sh"
