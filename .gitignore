@@ -46,3 +46,5 @@ secrets*
 
 arch-configs/nvim/pack
 arch-configs/pulse
+arch-configs/Franz
+arch-configs/gcloud
