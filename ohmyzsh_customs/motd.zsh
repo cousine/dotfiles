@@ -12,7 +12,7 @@ motd() {
   return 0
 }
 
-local tmx=$(tmux display-message -p '#S:#I.#P')
+local tmx=$(tmux display-message -p '#S:#I.#P' 2>&1)
 if [[ -v INTMUX && "$tmx" = 'cousine-main:1.0' || "$tmx" = 'cousine-secondary:1.0' ]]; then
   motd
 fi

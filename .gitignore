@@ -48,3 +48,7 @@ arch-configs/nvim/pack
 arch-configs/pulse
 arch-configs/Franz
 arch-configs/gcloud
+arch-configs/htop
+arch-configs/libreoffice
+arch-configs/gtk-2.0
+arch-configs/gtk-3.0
