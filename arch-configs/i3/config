@@ -11,6 +11,7 @@ set $launcher "rofi -show run"
 set $fileExplorer "kitty ranger ~"
 set $musicplayer "kitty --name=__ncmpcpp ncmpcpp"
 set $taskmanager "kitty --name=__htop htop"
+set $networkmanager "kitty --name=__nmtui nmtui"
 
 # Colors
 # class 		border	backgr.	text	indic.	child_border
@@ -49,7 +50,11 @@ bindsym $mod+o exec $fileExplorer
 
 # start taskmanager
 bindsym $mod+Shift+Delete exec $taskmanager;
-for_window [instance="__htop"] floating enable; [instance="__htop"] resize set 1600 960; move position center;
+for_window [instance="__htop"] floating enable; [instance="__htop"] resize set 1600 960; [instance="__htop"] move position center;
+
+# start network manager
+bindsym $mod+Shift+n exec $networkmanager;
+for_window [instance="__nmtui"] floating enable; [instance="__nmtui"] resize set 1600 960; [instance="__nmtui"] move position center;
 
 # kill focused window
 bindsym $mod+q kill
@@ -133,6 +138,7 @@ bindsym $mod+End workspace $ws12
 bindsym $mod+Insert workspace $ws13
 
 bindsym $mod+n workspace next
+bindsym $mod+Tab workspace next
 bindsym $mod+p workspace prev
 
 # move focused container to workspace
