@@ -135,5 +135,6 @@ PROJECT_PATHS=(~/projects)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 
+export TERMINFO=~/.terminfo
 
 [ -s "/home/cousine/.scm_breeze/scm_breeze.sh" ] && source "/home/cousine/.scm_breeze/scm_breeze.sh"

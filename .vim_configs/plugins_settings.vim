@@ -49,6 +49,8 @@ let NERDTreeQuitOnOpen=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Change CWD whenver NERDTree changes dir
 let NERDTreeChDirMode=2
+" Ignore files and folders in the tree
+let NERDTreeIgnore = ['\.git$', '\node_modules$']
 
 " GitGutter
 au VimEnter * GitGutterEnable

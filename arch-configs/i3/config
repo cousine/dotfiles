@@ -218,6 +218,8 @@ bindsym $mod+Shift+l exec "betterlockscreen -l"
 # Brightness
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
+# Monitors
+bindsym XF86Display exec --no-startup-id $HOME/bin/switch_disp.sh
 # Media
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ 
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- 
