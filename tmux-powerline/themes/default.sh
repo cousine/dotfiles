@@ -49,6 +49,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
     "tmux_mem_cpu_load 3 8" \
     #"rainbarf 0 0" \
     #"xkb_layout 125 117" \
+    "prayer_times 2 8" \
 		"date_day 4 17" \
 		"date 4 17 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
     "time 4 17 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \

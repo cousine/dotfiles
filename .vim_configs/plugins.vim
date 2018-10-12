@@ -168,6 +168,9 @@ call minpac#add('koron/nyancat-vim')
 " BufOnly
 call minpac#add('vim-scripts/BufOnly.vim')
 
+" Highlight interesting words
+call minpac#add('lfv89/vim-interestingwords')
+
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 

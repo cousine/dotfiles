@@ -56,9 +56,9 @@ font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
-modules-left = mpd alsa wlan-activity backlight-acpi battery
+modules-left = mpd alsa wlan-activity mobile-activity backlight-acpi battery
 modules-center = i3
-modules-right = wlan cpu memory xkeyboard time 
+modules-right = wlan cpu memory displays xkeyboard time 
 
 tray-position = left
 tray-padding = 0
@@ -104,6 +104,18 @@ tray-padding = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/displays]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-separator = " . "
+
+menu-0-0 = Mobile
+menu-0-0-exec = autorandr -l mobile &
+menu-0-1 = Programming
+menu-0-1-exec = autorandr -l programming &
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -242,7 +254,15 @@ interface = wlp2s0
 interval = 5.0
 
 label-connected =  %downspeed%  %upspeed%
-label-disconnected = 睊 Not Connected
+;label-disconnected = 睊 Not Connected
+
+[module/mobile-activity]
+type = internal/network
+interface = wwp0s20f0u1i2
+interval = 5.0
+
+label-connected =  %downspeed%  %upspeed%
+;label-disconnected = 睊 Not Connected
 
 [module/time]
 type = internal/date

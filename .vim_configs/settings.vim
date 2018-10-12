@@ -79,8 +79,8 @@ set mousehide
 set splitbelow
 set splitright
 
-" Use OSX clipboard
-set clipboard=unnamed
+" Use xclipboard
+set clipboard=unnamedplus
 
 " Remove esc delay
 set ttimeout

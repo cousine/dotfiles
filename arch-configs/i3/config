@@ -219,7 +219,7 @@ bindsym $mod+Shift+l exec "betterlockscreen -l"
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
 # Monitors
-bindsym XF86Display exec --no-startup-id $HOME/bin/switch_disp.sh
+bindsym XF86Display exec --no-startup-id autorandr --change #$HOME/bin/switch_disp.sh
 # Media
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ 
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- 
@@ -229,11 +229,14 @@ bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 bindsym Print exec scrot -e 'mv $f ~/Screenshots'
 # Music
 bindsym $mod+s workspace $ws13; exec $musicplayer
+# Switch wallpaper
+bindsym $mod+Shift+d exec --no-startup-id $HOME/bin/wallpaper.zsh -n
 
 # External apps
+exec_always --no-startup-id autorandr --change
 exec --no-startup-id "xss-lock -- betterlockscreen -l"
 exec_always --no-startup-id "betterlockscreen -l"
 exec --no-startup-id mpd
 exec --no-startup-id compton
-exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.config/wallpapers/wl5.gif"
+exec_always --no-startup-id $HOME/bin/wallpaper.zsh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

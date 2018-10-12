@@ -52,3 +52,8 @@ arch-configs/htop
 arch-configs/libreoffice
 arch-configs/gtk-2.0
 arch-configs/gtk-3.0
+arch-configs/VirtualBox
+arch-configs/QtProject.conf
+arch-configs/configstore
+arch-configs/google-chrome
+arch-configs/menus
