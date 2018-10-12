@@ -145,3 +145,8 @@ let g:task_default_prompt  = ['project', 'description', 'priority', 'due']
 let g:UltiSnipsSnippetsDir="~/.vim_configs/UltiSnips"
 " Could be problamatic for SnipMate?
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim_configs/UltiSnips']
+
+" Disable JSON conceal (hiding double quotes)
+let g:indentLine_concealcursor=""
+let g:vim_json_syntax_conceal = 0 
+

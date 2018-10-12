@@ -59,7 +59,7 @@ run_segment() {
 
     if [ $current_timestamp -ge $timing_stamp ] ; then
       let next_prayer=${i}+1
-      if [ $next_prayer -gt ${#prayers[@]} ] ; then
+      if [ $next_prayer -ge ${#prayers[@]} ] ; then
         let next_prayer=0
       fi
     fi

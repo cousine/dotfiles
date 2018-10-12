@@ -16,7 +16,9 @@ call minpac#add('tpope/vim-fugitive')
 " Rails
 call minpac#add('tpope/vim-rails')
 " Ruby
-call minpac#add('vim-ruby/vim-ruby') 
+call minpac#add('vim-ruby/vim-ruby')
+" Repeat last command
+call minpac#add('tpope/vim-repeat')
 " Rubocop
 call minpac#add('ngmy/vim-rubocop') 
 " Tomorrow Theme
@@ -56,6 +58,8 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('wesQ3/vim-windowswap') 
 " Auto indent lines
 call minpac#add('Yggdroot/indentLine') 
+" JSON
+call minpac#add('elzr/vim-json')
 " Go
 call minpac#add('fatih/vim-go') 
 " Undo history navigation
@@ -170,6 +174,12 @@ call minpac#add('vim-scripts/BufOnly.vim')
 
 " Highlight interesting words
 call minpac#add('lfv89/vim-interestingwords')
+
+" Git commit viewer
+call minpac#add('junegunn/gv.vim')
+
+" Zen Mode
+call minpac#add('junegunn/goyo.vim')
 
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
