@@ -57,3 +57,5 @@ arch-configs/QtProject.conf
 arch-configs/configstore
 arch-configs/google-chrome
 arch-configs/menus
+arch-configs/mimeapps.list
+arch-configs/vivaldi/

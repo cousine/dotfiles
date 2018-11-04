@@ -181,6 +181,12 @@ call minpac#add('junegunn/gv.vim')
 " Zen Mode
 call minpac#add('junegunn/goyo.vim')
 
+" PHP Blade highlighting
+call minpac#add('jwalton512/vim-blade')
+
+" Pug templates syntax highlighting
+call minpac#add('digitaltoad/vim-pug')
+
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 

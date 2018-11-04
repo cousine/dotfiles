@@ -140,4 +140,6 @@ export TERMINFO=~/.terminfo
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
+bindkey -v
+
 [ -s "/home/cousine/.scm_breeze/scm_breeze.sh" ] && source "/home/cousine/.scm_breeze/scm_breeze.sh"
