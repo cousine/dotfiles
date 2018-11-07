@@ -185,6 +185,8 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
+
+        bindsym f resize set 1920 1040; move position center; mode "default"
 }
 
 bindsym $mod+r mode "resize"
