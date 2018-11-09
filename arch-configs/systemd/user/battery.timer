@@ -1,0 +1,9 @@
+[Unit]
+Description=Periodical checking of battery status every two minutes
+
+[Timer]
+OnActiveSec=2min
+OnUnitActiveSec=2min 
+
+[Install]
+WantedBy=timers.target

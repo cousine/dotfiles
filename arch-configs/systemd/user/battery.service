@@ -1,0 +1,6 @@
+[Unit]
+Description=Show warning on low battery
+
+[Service]
+;Type=oneshot
+ExecStart=/home/cousine/bin/lowbattery.sh
