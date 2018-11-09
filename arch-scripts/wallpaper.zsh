@@ -38,4 +38,18 @@ else
 fi
 
 echo ${next_wallpaper} > /tmp/wallpaper.dat
-xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop $next_wallpaper
+
+monitors=(${(f)"$(xrandr --listmonitors | sed -e '1 d' -e  's/^\( [a-zA-Z0-9]*:\)//g' -e 's/^ \([+*a-zA-Z0-9\-]* \)//')"})
+
+
+for monitor in $monitors; do
+  monitor_name="${monitor[(ws: :)2]}" #maybe use to set different bgs per monitor?
+  monitor_dims="${monitor[(ws: :)0]}"
+  dims=(${(s:/:)monitor_dims})
+  width=$dims[1]
+  height="${dims[2][(ws:x:)2]}"
+  xpos="${dims[3][(ws:+:)2]}"
+  ypos="${dims[3][(ws:+:)3]}"
+
+  xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- mpv -wid WID --keepaspect=no --loop $next_wallpaper &
+done
