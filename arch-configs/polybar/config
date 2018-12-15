@@ -134,7 +134,7 @@ font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
-modules-left = mobile-status wlan-activity battery
+modules-left = mobile-usage mobile-status wlan-activity battery
 modules-center = i3
 modules-right = temperature cpu memory xkeyboard time 
 
@@ -165,7 +165,9 @@ format-prefix-foreground = ${colors.foreground}
 
 label-layout = %layout%
 
+label-indicator = <%name%>
 label-indicator-background = ${colors.secondary}
+label-indicator-foreground = ${colors.background}
 
 [module/mpd]
 type = internal/mpd

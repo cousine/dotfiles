@@ -59,3 +59,5 @@ arch-configs/google-chrome
 arch-configs/menus
 arch-configs/mimeapps.list
 arch-configs/vivaldi/
+arch-configs/enchant
+arch-configs/filezilla
