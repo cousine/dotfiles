@@ -9,8 +9,12 @@
 	ui = true
 [mergetool "fugitive"]
 	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[mergetool "nvimdiff4"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [merge]
-	tool = fugitive
+    tool = nvimdiff4
+    # if not using a tool name with builtin support, must supply mergetool cmd
+    # as below
 [push]
 	default = simple
 [pager]
@@ -18,3 +22,5 @@
 	show = diff-so-fancy | less --tabs=1,5 -RFX
 [diff "sopsdiffer"]
 	textconv = sops -d
+[commit]
+	verbose = true

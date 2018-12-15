@@ -19,8 +19,12 @@ if [ ! -f "/tmp/wallpaper.dat" ] ; then
 else
   current_wallpaper=`cat /tmp/wallpaper.dat`
   next_wallpaper_id=$((${wallpapers[(ie)$current_wallpaper]}))
-  while getopts ":n" opt; do
+  while getopts ":nr" opt; do
     case $opt in
+      r)
+        current_wallpaper=`cat $HOME/.config/wallpaper.dat`
+        next_wallpaper_id=$((${wallpapers[(ie)$current_wallpaper]}))
+        ;;
       n)
         next_wallpaper_id=$((${wallpapers[(ie)$current_wallpaper]}+1))
         ;;
@@ -41,7 +45,6 @@ echo ${next_wallpaper} > /tmp/wallpaper.dat
 
 monitors=(${(f)"$(xrandr --listmonitors | sed -e '1 d' -e  's/^\( [a-zA-Z0-9]*:\)//g' -e 's/^ \([+*a-zA-Z0-9\-]* \)//')"})
 
-
 for monitor in $monitors; do
   monitor_name="${monitor[(ws: :)2]}" #maybe use to set different bgs per monitor?
   monitor_dims="${monitor[(ws: :)0]}"
@@ -51,5 +54,10 @@ for monitor in $monitors; do
   xpos="${dims[3][(ws:+:)2]}"
   ypos="${dims[3][(ws:+:)3]}"
 
-  xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- mpv -wid WID --keepaspect=no --loop $next_wallpaper &
+  if [[ $#monitors -eq 1 ]]; then
+    xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- mpv -wid WID --keepaspect=no --loop $next_wallpaper &
+  else
+    xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- feh --bg-fill $next_wallpaper &
+  fi
 done
+

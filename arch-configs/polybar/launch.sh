@@ -9,5 +9,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 # Launch bar1 and bar2
 polybar default -r &
 polybar default-hdmi -r &
+polybar default-dp2 -r &
 
 echo "Bars launched..."

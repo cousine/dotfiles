@@ -56,9 +56,9 @@ font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
-modules-left = mpd alsa wlan-activity mobile-activity backlight-acpi battery
+modules-left = mpd alsa wlan-activity mobile-status backlight-acpi battery
 modules-center = i3
-modules-right = wlan cpu memory displays xkeyboard time 
+modules-right = mobile-usage wlan cpu memory displays xkeyboard time 
 
 tray-position = left
 tray-padding = 0
@@ -98,6 +98,45 @@ font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 modules-left = battery
 modules-center = i3
 modules-right = wlan time 
+
+tray-position = left
+tray-padding = 0
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/default-dp2]
+monitor = "DP-2"
+width = 100%
+height = 27
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 2
+padding-right = 2
+
+module-margin = 1
+
+font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
+font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
+font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
+
+modules-left = mobile-status wlan-activity battery
+modules-center = i3
+modules-right = temperature cpu memory xkeyboard time 
 
 tray-position = left
 tray-padding = 0
@@ -256,14 +295,6 @@ interval = 5.0
 label-connected =  %downspeed%  %upspeed%
 ;label-disconnected = 睊 Not Connected
 
-[module/mobile-activity]
-type = internal/network
-interface = wwp0s20f0u1i2
-interval = 5.0
-
-label-connected =  %downspeed%  %upspeed%
-;label-disconnected = 睊 Not Connected
-
 [module/time]
 type = internal/date
 interval = 1.0
@@ -323,6 +354,17 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/mobile-usage]
+type = custom/script
+exec = /home/cousine/.config/polybar/modules/mobile_monthly_usage.sh
+interval = 5
+format = <label>
+
+[module/mobile-status]
+type = custom/script
+exec = /home/cousine/.config/polybar/modules/mobile_activity.sh
+interval = 120
 
 [settings]
 screenchange-reload = true

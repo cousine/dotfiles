@@ -117,3 +117,11 @@ set rtp+=~/.vim_configs/UltiSnips/
 
 " Session stuff
 set sessionoptions=blank,curdir,folds,help,tabpages,winpos
+
+" Auto reload files
+"set autoread
+"autocmd FocusGained,CursorHold ?* if getcmdwintype() == '' | checktime | endif
+"
+
+" Highlight merge conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'

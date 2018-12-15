@@ -39,7 +39,7 @@ ZSH_THEME="bullet-train"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -142,9 +142,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 
 export TERMINFO=~/.terminfo
 
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
 
-#bindkey -v
+#bindkey "${terminfo[khome]}" beginning-of-line
+#bindkey "${terminfo[kend]}" end-of-line
 
 [ -s "/home/cousine/.scm_breeze/scm_breeze.sh" ] && source "/home/cousine/.scm_breeze/scm_breeze.sh"

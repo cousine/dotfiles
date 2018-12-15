@@ -187,6 +187,9 @@ call minpac#add('jwalton512/vim-blade')
 " Pug templates syntax highlighting
 call minpac#add('digitaltoad/vim-pug')
 
+" Terraform syntax highlighting
+call minpac#add('hashivim/vim-terraform')
+
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 

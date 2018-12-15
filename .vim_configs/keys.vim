@@ -18,7 +18,7 @@ nmap ,f :NERDTreeFind<CR>
 
 " Split panes
 nnoremap <silent> <C-\> <C-w>v<C-w>left
-nnoremap <silent> <C-_> :split<cr>
+nnoremap <silent> <leader>- :split<cr>
 nnoremap <silent> <C-x> <C-w>q
 nnoremap <silent> <leader>= <C-w>=
 nnoremap <silent> <leader>jj :resize -5<cr>
