@@ -43,4 +43,6 @@ if [ $modem_mode = "on" ]; then
 
     echo "$quality_symbol $connection_symbol $operator"
   fi
+else
+  exit
 fi

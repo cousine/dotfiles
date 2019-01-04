@@ -11,5 +11,7 @@ if [ $modem_mode = "on" ]; then
   tx=`vnstat -q -i ppp0 --json m 1 | jq '.interfaces[0].traffic.month[0].tx'`
   total=$(($rx + $tx))
   echo $total | awk '{suffix=" KMGT"; for(i=1; $1>1024 && i < length(suffix); i++) $1/=1024; print "龍 "int($1) substr(suffix, i, 1);}'
+else
+  exit
 fi
 

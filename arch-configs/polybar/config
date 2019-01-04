@@ -56,7 +56,7 @@ font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
-modules-left = mpd alsa wlan-activity mobile-status backlight-acpi battery
+modules-left = spotify mpd alsa wlan-activity mobile-status backlight-acpi battery
 modules-center = i3
 modules-right = mobile-usage wlan cpu memory displays xkeyboard time 
 
@@ -95,7 +95,7 @@ font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
-modules-left = battery
+modules-left = spotify battery
 modules-center = i3
 modules-right = wlan time 
 
@@ -134,7 +134,7 @@ font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
-modules-left = mobile-usage mobile-status wlan-activity battery
+modules-left = spotify mobile-usage mobile-status wlan-activity battery
 modules-center = i3
 modules-right = temperature cpu memory xkeyboard time 
 
@@ -155,6 +155,12 @@ menu-0-0 = Mobile
 menu-0-0-exec = autorandr -l mobile &
 menu-0-1 = Programming
 menu-0-1-exec = autorandr -l programming &
+menu-0-2 = Programming Above
+menu-0-2-exec = autorandr -l programming_above &
+menu-0-3 = Mirror Office
+menu-0-3-exec = autorandr -l mirror_office &
+menu-0-4 = Mirror Office Yellow
+menu-0-4-exec = autorandr -l mirror_office_yellow &
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -186,6 +192,14 @@ icon-next = 怜
 label-song-maxlen = 50
 label-song-ellipsis = true
 label-foreground = ${colors.foreground}
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python /home/cousine/.config/polybar/modules/spotify_status.py -f '{artist}: {song}'
+format-prefix-foreground = #1db954
 
 [module/bspwm]
 type = internal/bspwm
