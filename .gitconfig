@@ -1,6 +1,7 @@
 [user]
 	name = Omar Mekky
 	email = alphaengine@gmail.com
+	signingkey = 410E398C78648A32
 [github]
 	user = cousine
 [core]
@@ -24,3 +25,4 @@
 	textconv = sops -d
 [commit]
 	verbose = true
+	gpgsign = true

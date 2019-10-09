@@ -1,0 +1,17 @@
+#!/bin/bash
+# if we don't have a file, start at zero
+if [ ! -f "/tmp/docker_mode.dat" ] ; then
+  docker_mode="off"
+else
+  docker_mode=`cat /tmp/docker_mode.dat`
+fi
+
+if [ $docker_mode = "off" ]; then
+  sudo systemctl start docker.service
+  docker_mode="on"
+else
+  sudo systemctl stop docker.service
+  docker_mode="off"
+fi
+echo "docker: ${docker_mode}"
+echo "${docker_mode}" > /tmp/docker_mode.dat

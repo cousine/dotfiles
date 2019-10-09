@@ -63,3 +63,19 @@ augroup VimCSS3Syntax
   autocmd FileType scss setlocal iskeyword+=-
 augroup END
 
+function! AppendRgIgnore(ignores_list)
+  call map(a:ignores_list, '"--glob \"". v:val . "\""' )
+
+  if exists("g:rg_ignore")
+    let g:rg_ignore+=a:ignores_list
+  else
+    let g:rg_ignore=a:ignores_list
+  endif
+  let $FZF_DEFAULT_COMMAND= g:fzf_def_command . join(g:rg_ignore, ' ')
+endfunction
+
+function! SetRgIgnore(ignores_list)
+  call map(a:ignores_list, '"--glob \"". v:val . "\""' )
+  let g:rg_ignore=a:ignores_list
+  let $FZF_DEFAULT_COMMAND= g:fzf_def_command . join(g:rg_ignore, ' ')
+endfunction

@@ -7,9 +7,9 @@ set $gaps 2
 set $term "kitty"
 set $tmux "kitty --name=__cousine-main tmux new-session -A -s cousine-main"
 set $tmux2 "kitty --name=__cousine-secondary tmux new-session -A -s cousine-secondary"
-set $launcher "rofi -show run"
+set $launcher "rofi -show run -modi 'run,calc,emoji,window,ssh'"
 set $fileExplorer "kitty ranger ~"
-set $musicplayer "spotify"
+set $soundmixer "pasystray"
 set $taskmanager "kitty --name=__htop htop"
 set $networkmanager "kitty --name=__nmtui nmtui"
 
@@ -99,7 +99,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus [class="^((?!Franz)(?!Spotify).)*$"] scratchpad show
+bindsym $mod+minus [class="^((?!Rambox)(?!Spotify).)*$"] scratchpad show
 
 # Workspaces
 set $ws1 "1"
@@ -119,12 +119,14 @@ set $ws13 "13"
 assign [instance="__cousine-main"] $ws11
 assign [instance="__cousine-secondary"] $ws12
 
-bindsym $mod+Shift+f [class="Franz"] scratchpad show;
-bindsym $mod+Insert [class="Spotify"] scratchpad show;
+bindsym $mod+Shift+f [class="Rambox"] scratchpad show;
+bindsym XF86Launch2 [class="Spotify"] scratchpad show;
+bindsym $mod+F12 [class="Spotify"] scratchpad show;
 for_window [class="Spotify"] move scratchpad; [class="Spotify"] scratchpad show; resize set 1920 1000; move position center;
-for_window [class="Franz"] move scratchpad; [class="Franz"] scratchpad show; resize set 1640 900; move position center;
+for_window [class="Rambox"] move scratchpad; [class="Rambox"] scratchpad show; resize set 1640 900; move position center;
 
 # switch to workspace
+bindsym XF86Tools workspace $ws1
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -135,7 +137,8 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $mod+Home workspace $ws11
+bindsym XF86Launch1 workspace $ws11
+bindsym $mod+F10 workspace $ws11
 bindsym $mod+End workspace $ws12
 #bindsym $mod+Insert workspace $ws13
 
@@ -154,7 +157,12 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-#bindsym $mod+Shift+Insert move container to workspace $ws13
+bindsym $mod+Shift+XF86Launch1 move container to workspace $ws11
+bindsym $mod+Shift+End move container to workspace $ws12
+
+bindsym $mod+Ctrl+Up move workspace to output DP-2
+bindsym $mod+Ctrl+Down move workspace to output eDP-1
+bindsym $mod+Ctrl+Left move workspace to output HDMI-1
 
 # Configuration
 # reload the configuration file
@@ -233,7 +241,7 @@ bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 # Screenshots
 bindsym Print exec scrot -e 'mv $f ~/Screenshots'
 # Music
-bindsym $mod+s workspace $ws13; exec $musicplayer
+bindsym $mod+s exec $soundmixer
 # Switch wallpaper
 bindsym $mod+Shift+d exec --no-startup-id $HOME/bin/wallpaper.zsh -n
 bindsym $mod+Ctrl+d exec --no-startup-id $HOME/bin/wallpaper.zsh -r

@@ -78,7 +78,11 @@ call minpac#add('ap/vim-css-color')
 " Retro color scheme
 call minpac#add('morhetz/gruvbox') 
 " Preview Markdown
-call minpac#add('nelstrom/vim-markdown-preview') 
+"call minpac#add('nelstrom/vim-markdown-preview') 
+" Previm markdown preview
+call minpac#add('previm/previm')
+" Open url in browser
+call minpac#add('tyru/open-browser.vim')
 " Improve HTML/CSS workflow
 call minpac#add('mattn/emmet-vim') 
 " Integration with tmux
@@ -189,6 +193,15 @@ call minpac#add('digitaltoad/vim-pug')
 
 " Terraform syntax highlighting
 call minpac#add('hashivim/vim-terraform')
+
+" Underline word under cursor
+call minpac#add('itchyny/vim-cursorword')
+
+" Better slash search
+call minpac#add('junegunn/vim-slash')
+
+" Dart syntax highlighting
+call minpac#add('dart-lang/dart-vim-plugin')
 
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
