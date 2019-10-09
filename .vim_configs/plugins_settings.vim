@@ -50,7 +50,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Change CWD whenver NERDTree changes dir
 let NERDTreeChDirMode=2
 " Ignore files and folders in the tree
-let NERDTreeIgnore = ['\.git$', '\node_modules$']
+let NERDTreeIgnore = ['\.git$', '\node_modules$', '_build$']
 
 " GitGutter
 au VimEnter * GitGutterEnable
@@ -132,7 +132,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " FuzzyFinder fzf
 let g:fzf_layout = { 'window': '10 split | enew' }
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+let g:fzf_def_command = 'rg --files --no-ignore --hidden --follow '
+call SetRgIgnore(["!.git/*"])
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow '.join(rg_ignore, ' ').' --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 " Show quick move highlights on f, F, t, T
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']

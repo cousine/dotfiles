@@ -1,0 +1,17 @@
+#!/bin/bash
+# if we don't have a file, start at zero
+if [ ! -f "/tmp/bluetooth_mode.dat" ] ; then
+  bluetooth_mode="off"
+else
+  bluetooth_mode=`cat /tmp/bluetooth_mode.dat`
+fi
+
+if [ $bluetooth_mode = "off" ]; then
+  sudo systemctl start bluetooth.service
+  bluetooth_mode="on"
+else
+  sudo systemctl stop bluetooth.service
+  bluetooth_mode="off"
+fi
+echo "bluetooth: ${bluetooth_mode}"
+echo "${bluetooth_mode}" > /tmp/bluetooth_mode.dat

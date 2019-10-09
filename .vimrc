@@ -45,6 +45,13 @@ if filereadable(expand("~/.vim_configs/settings.vim"))
 endif
 
 " ========================================================================
+" Custom Commands and Functions
+" ========================================================================
+if filereadable(expand("~/.vim_configs/functions.vim"))
+  source ~/.vim_configs/functions.vim
+endif
+
+" ========================================================================
 " Plugins Settings
 " ========================================================================
 if filereadable(expand("~/.vim_configs/plugins_settings.vim"))
@@ -57,11 +64,3 @@ endif
 if filereadable(expand("~/.vim_configs/keys.vim"))
   source ~/.vim_configs/keys.vim
 endif
-
-" ========================================================================
-" Custom Commands and Functions
-" ========================================================================
-if filereadable(expand("~/.vim_configs/functions.vim"))
-  source ~/.vim_configs/functions.vim
-endif
-

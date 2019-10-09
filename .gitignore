@@ -58,6 +58,25 @@ arch-configs/configstore
 arch-configs/google-chrome
 arch-configs/menus
 arch-configs/mimeapps.list
-arch-configs/vivaldi/
+arch-configs/vivaldi
 arch-configs/enchant
 arch-configs/filezilla
+arch-configs/Android Open Source Project
+arch-configs/Clockify
+arch-configs/Insomnia
+arch-configs/Obinslab Starter
+arch-configs/RamboxPro
+arch-configs/USBGuard
+arch-configs/autostart/keybase_autostart.desktop
+arch-configs/baton.json
+arch-configs/ckb-next
+arch-configs/doctl
+arch-configs/draw.io
+arch-configs/insight-nodejs
+arch-configs/keybase
+arch-configs/neofetch
+arch-configs/pavucontrol.ini
+arch-configs/qalculate
+arch-configs/spotify
+arch-configs/teamviewer
+arch-configs/zoomus.conf

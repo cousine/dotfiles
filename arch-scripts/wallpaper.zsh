@@ -53,9 +53,14 @@ for monitor in $monitors; do
   height="${dims[2][(ws:x:)2]}"
   xpos="${dims[3][(ws:+:)2]}"
   ypos="${dims[3][(ws:+:)3]}"
+  extension="${next_wallpaper##*.}"
 
   if [[ $#monitors -eq 1 ]]; then
-    xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- mpv -wid WID --keepaspect=no --loop $next_wallpaper &
+    if [[ $extension = "gif" ]]; then
+      xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- mpv -wid WID --keepaspect=no --loop $next_wallpaper &
+    else
+      xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- feh --bg-fill $next_wallpaper &
+    fi
   else
     xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- feh --bg-fill $next_wallpaper &
   fi

@@ -16,6 +16,12 @@ map <C-n> :NERDTreeToggle<CR>
 " Find in nerdtree
 nmap ,f :NERDTreeFind<CR>
 
+" Hard mode
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Right> <Nop>
+noremap <Left> <Nop>
+
 " Split panes
 nnoremap <silent> <C-\> <C-w>v<C-w>left
 nnoremap <silent> <leader>- :split<cr>

@@ -58,7 +58,7 @@ font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
 modules-left = spotify mpd alsa wlan-activity mobile-status backlight-acpi battery
 modules-center = i3
-modules-right = mobile-usage wlan cpu memory displays xkeyboard time 
+modules-right = mobile-usage vpn-openvpn-status wlan docker-status cpu memory displays xkeyboard time 
 
 tray-position = left
 tray-padding = 0
@@ -99,9 +99,6 @@ modules-left = spotify battery
 modules-center = i3
 modules-right = wlan time 
 
-tray-position = left
-tray-padding = 0
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -134,12 +131,9 @@ font-0 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-1 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
-modules-left = spotify mobile-usage mobile-status wlan-activity battery
+modules-left = spotify mobile-status wlan-activity battery
 modules-center = i3
-modules-right = temperature cpu memory xkeyboard time 
-
-tray-position = left
-tray-padding = 0
+modules-right = temperature mobile-usage cpu memory xkeyboard time 
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -343,13 +337,20 @@ label-full = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
-format-charging =  <label-charging>
+format-charging =  <animation-charging> <label-charging>
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 400
 
 
 [module/temperature]
@@ -375,12 +376,30 @@ ramp-foreground = ${colors.foreground-alt}
 type = custom/script
 exec = /home/cousine/.config/polybar/modules/mobile_monthly_usage.sh
 interval = 5
+format-prefix = "龍 "
 format = <label>
 
 [module/mobile-status]
 type = custom/script
 exec = /home/cousine/.config/polybar/modules/mobile_activity.sh
-interval = 120
+interval = 90
+
+[module/vpn-openvpn-status]
+type = custom/script
+exec-if = pgrep -a openvpn$
+exec = /home/cousine/.config/polybar/modules/vpn-openvpn-status.sh
+interval = 5
+format-prefix = "嬨 "
+format = <label>
+format-prefix-foreground = #61AFEF
+
+[module/docker-status]
+type = custom/script
+exec-if = /home/cousine/.config/polybar/modules/docker_status.sh
+exec = echo ""
+interval = 5
+format = <label>
+format-foreground = #61AFEF
 
 [settings]
 screenchange-reload = true
