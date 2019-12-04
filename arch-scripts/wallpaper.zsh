@@ -98,6 +98,13 @@ if [ ! -z $next_wallpaper ]; then
   exit 0
 fi
 
-shift $((OPTIND -1))
-setWallpaper $1 true
+if [ ! -z $1 ]; then
+  shift $((OPTIND -1))
+  setWallpaper $1 true
+else
+  read wallpaper
+  setWallpaper $wallpaper true
+fi
+
+
 
