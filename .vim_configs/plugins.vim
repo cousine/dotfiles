@@ -77,10 +77,6 @@ call minpac#add('ervandew/supertab')
 call minpac#add('ap/vim-css-color') 
 " Retro color scheme
 call minpac#add('morhetz/gruvbox') 
-" Preview Markdown
-"call minpac#add('nelstrom/vim-markdown-preview') 
-" Previm markdown preview
-call minpac#add('previm/previm')
 " Open url in browser
 call minpac#add('tyru/open-browser.vim')
 " Improve HTML/CSS workflow
@@ -90,7 +86,7 @@ call minpac#add('benmills/vimux')
 " Align text easily
 call minpac#add('godlygeek/tabular')
 " Markdown stuff
-call minpac#add('chemzqm/macdown.vim')
+call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' })
 call minpac#add('Shougo/vimproc.vim')
 " Github Completion
 call minpac#add('rhysd/github-complete.vim')
@@ -163,6 +159,7 @@ call minpac#add('machakann/vim-highlightedyank')
 
 " Elixir programming language
 call minpac#add('elixir-editors/vim-elixir')
+call minpac#add('slashmili/alchemist.vim')
 
 " Onedark theme
 call minpac#add('rakr/vim-one')
