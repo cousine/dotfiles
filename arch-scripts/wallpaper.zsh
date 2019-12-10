@@ -42,7 +42,6 @@ getCurrentWallpaper()
 {
   # if we don't have a file, start at zero
   if [ ! -f "/tmp/wallpaper.dat" ] ; then
-    
     if [ ! -f "$HOME/.config/wallpaper.dat" ]; then
       next_wallpaper_id=1
     else
