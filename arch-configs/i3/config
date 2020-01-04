@@ -245,7 +245,7 @@ bindsym Print exec scrot -e 'mv $f ~/Screenshots'
 bindsym $mod+s exec $soundmixer
 # Switch wallpaper
 bindsym $mod+Shift+d exec --no-startup-id $HOME/bin/wallpaper.zsh -n
-bindsym $mod+Ctrl+d exec --no-startup-id $HOME/bin/wallpaper.zsh -r
+bindsym $mod+Ctrl+d exec --no-startup-id $HOME/bin/wallpaper.zsh -p
 bindsym $mod+Print exec --no-startup-id "cat /tmp/wallpaper.dat | $HOME/bin/wallpaper.zsh"
 bindsym $mod+Shift+space exec --no-startup-id $wallpaperswitch
 
@@ -255,5 +255,5 @@ exec --no-startup-id "betterlockscreen -l"
 exec --no-startup-id mpd
 exec --no-startup-id compton
 exec_always --no-startup-id autorandr --change
-exec_always --no-startup-id $HOME/bin/wallpaper.zsh
+exec_always --no-startup-id $HOME/bin/wallpaper.zsh -r
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
