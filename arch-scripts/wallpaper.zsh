@@ -75,15 +75,18 @@ getNextWallpaper()
 wallpapers=($WALLPAPERS_DIR/*.(jpg|jpeg|gif|png))
 current_wallpaper_id=`getCurrentWallpaper`
 
-while getopts ":nr" opt; do
+while getopts ":npr" opt; do
   case $opt in
     n)
       next_wallpaper_id=$((${current_wallpaper_id}+1))
       next_wallpaper=`getNextWallpaper ${next_wallpaper_id}`
       ;;
-    r)
+    p)
       next_wallpaper_id=$((${current_wallpaper_id}-1))
       next_wallpaper=`getNextWallpaper ${next_wallpaper_id}`
+      ;;
+    r)
+      next_wallpaper=`getNextWallpaper ${current_wallpaper_id}`
       ;;
     \?)
       echo "Invalid Option: -$OPTARG" 1>&2
