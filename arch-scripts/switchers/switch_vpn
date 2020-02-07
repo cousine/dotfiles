@@ -9,11 +9,15 @@ fi
 if [ $vpn_mode = "off" ]; then
   sudo systemctl start stunnel
   sudo openvpn --daemon --auth-nocache --cd "/home/cousine/projects/vpn/keys" --config "secure.ovpn"
-  vpn_mode="on"
+  if [ $? -eq 0 ]; then
+    vpn_mode="on"
+  fi
 else
   sudo systemctl stop stunnel.service
   sudo killall openvpn
-  vpn_mode="off"
+  if [ $? -eq 0 ]; then
+    vpn_mode="off"
+  fi
 fi
 echo "VPN: ${vpn_mode}"
 echo "${vpn_mode}" > /tmp/vpn_mode.dat

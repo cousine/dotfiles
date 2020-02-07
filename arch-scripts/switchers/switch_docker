@@ -8,10 +8,15 @@ fi
 
 if [ $docker_mode = "off" ]; then
   sudo systemctl start docker.service
-  docker_mode="on"
+  if [ $? -eq 0 ]; then
+    docker_mode="on"
+  fi
 else
   sudo systemctl stop docker.service
-  docker_mode="off"
+  if [ $? -eq 0 ]; then
+    docker_mode="off"
+  fi
 fi
+
 echo "docker: ${docker_mode}"
 echo "${docker_mode}" > /tmp/docker_mode.dat
