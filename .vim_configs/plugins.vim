@@ -200,6 +200,9 @@ call minpac#add('junegunn/vim-slash')
 " Dart syntax highlighting
 call minpac#add('dart-lang/dart-vim-plugin')
 
+" Wakatime
+call minpac#add('wakatime/vim-wakatime')
+
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
