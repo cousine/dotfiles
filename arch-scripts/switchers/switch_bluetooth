@@ -8,10 +8,15 @@ fi
 
 if [ $bluetooth_mode = "off" ]; then
   sudo systemctl start bluetooth.service
-  bluetooth_mode="on"
+  if [ $? -eq 0 ]; then
+    bluetooth_mode="on"
+  fi
 else
   sudo systemctl stop bluetooth.service
-  bluetooth_mode="off"
+  if [ $? -eq 0 ]; then
+    bluetooth_mode="off"
+  fi
 fi
+
 echo "bluetooth: ${bluetooth_mode}"
 echo "${bluetooth_mode}" > /tmp/bluetooth_mode.dat

@@ -8,10 +8,15 @@ fi
 
 if [ $modem_mode = "off" ]; then
   sudo systemctl start ModemManager.service
-  modem_mode="on"
+  if [ $? -eq 0 ]; then
+    modem_mode="on"
+  fi
 else
   sudo systemctl stop ModemManager.service
-  modem_mode="off"
+  if [ $? -eq 0 ]; then
+    modem_mode="off"
+  fi
 fi
+
 echo "Broadband: ${modem_mode}"
 echo "${modem_mode}" > /tmp/mobile_broadband_mode.dat

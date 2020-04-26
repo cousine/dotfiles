@@ -62,6 +62,8 @@ call minpac#add('Yggdroot/indentLine')
 call minpac#add('elzr/vim-json')
 " Go
 call minpac#add('fatih/vim-go') 
+" GoDebug
+call minpac#add('jodosha/vim-godebug')
 " Undo history navigation
 call minpac#add('simnalamburt/vim-mundo') 
 " Show tags in a file (,t)
