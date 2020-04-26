@@ -120,11 +120,11 @@ set $ws13 "13"
 assign [instance="__cousine-main"] $ws11
 assign [instance="__cousine-secondary"] $ws12
 
-bindsym $mod+Shift+f [class="Ferdi"] scratchpad show;
+bindsym $mod+Shift+f [class="^Ferdi$"] scratchpad show;
 bindsym XF86Launch2 [class="Spotify"] scratchpad show;
 bindsym $mod+F12 [class="Spotify"] scratchpad show;
 for_window [class="Spotify"] move scratchpad; [class="Spotify"] scratchpad show; resize set 1920 1000; move position center;
-for_window [class="Ferdi"] move scratchpad; [class="Ferdi"] scratchpad show; resize set 1640 900; move position center;
+for_window [title="^Ferdi$"] move scratchpad; [title="^Ferdi$"] scratchpad show; resize set 1640 900; move position center;
 
 # switch to workspace
 bindsym XF86Tools workspace $ws1
@@ -254,6 +254,7 @@ exec --no-startup-id "xss-lock -- betterlockscreen -l"
 exec --no-startup-id "betterlockscreen -l"
 exec --no-startup-id mpd
 exec --no-startup-id compton
-exec_always --no-startup-id autorandr --change
+#exec_always --no-startup-id autorandr --change
 exec_always --no-startup-id $HOME/bin/wallpaper.zsh -r
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec dex -ae i3

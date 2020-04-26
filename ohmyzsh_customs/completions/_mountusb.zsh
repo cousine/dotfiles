@@ -1,12 +1,10 @@
 #compdef mountusb
 
 _mountusb() {
-  local state directories _real_path _path=$MOUNTS
+  local state
 
   _arguments \
     '*: :->device'
-
-  directories=(${words:1})
 
   case $state in
     device)

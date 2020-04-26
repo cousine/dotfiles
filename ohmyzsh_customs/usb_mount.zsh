@@ -1,14 +1,14 @@
 export MOUNTS=/dev
 
-function mountusb() {
+mountusb() {
   _mount_helper mount $1
 }
 
-function umountusb() {
+umountusb() {
   _mount_helper unmount $1
 }
 
-function _mount_helper() {
+_mount_helper() {
   local _path
 
   _path="$MOUNTS/$2"
