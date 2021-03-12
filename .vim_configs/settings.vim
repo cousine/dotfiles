@@ -8,9 +8,12 @@ syntax on
 "colorscheme tomorrow-night
 "colorscheme gruvbox
 "colorscheme dracula
-let g:one_allow_italics = 1
-colorscheme one
-set background=dark
+"let g:one_allow_italics = 1
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker' "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+colorscheme material
+"set background=darker
+" Material
 
 " Adjust status line
 set laststatus=2

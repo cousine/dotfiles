@@ -17,15 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #282c34
-background-alt = #4b5263
-foreground = #abb2bf
-foreground-alt = #5c6370
-primary = #d19a66
-secondary = #e5c07b
-alert = #be5046
-white = #FFFFFF
-green = #98c379
+include-file=~/.config/polybar/themes/material_darker.conf
 
 [bar/default]
 monitor = "eDP-1"

@@ -1,8 +1,13 @@
 rofi.font:		Sauce Code Pro Light Nerd Font Complete Mono 13
 rofi.hide-scrollbar:	true
 
-rofi.color-window:	#282c34, #d19a66, #4b5263
-rofi.color-normal:	#282c34, #abb2bf, #282c34, #d19a66, #282c34
+# OneDark
+#rofi.color-window:	#282c34, #d19a66, #4b5263
+#rofi.color-normal:	#282c34, #abb2bf, #282c34, #d19a66, #282c34
+
+# Material Darker
+rofi.color-window:	#212121, #f07178, #404040
+rofi.color-normal:	#212121, #eeffff, #262626, #f07178, #212121
 
 rofi.terminal:          kitty
 rofi.run-shell-command: {terminal} --name="__{cmd}" {cmd}
