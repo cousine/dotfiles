@@ -1,0 +1,16 @@
+global !p
+def insert_horizontal_line(word):
+	length=76
+	string_length = len(word)
+
+	dashes = int(length/2) - int((string_length+2)/2)
+
+	dashes_str = ''.join(['-' for i in range(dashes)])
+	anon_snippet_body = dashes_str + ' ' + word + ' ' + dashes_str
+
+	return anon_snippet_body
+endglobal
+
+snippet "--(.+)--" "Insert horizontal line with title" ri
+`!p snip.rv = insert_horizontal_line(match.group(1))`
+endsnippet

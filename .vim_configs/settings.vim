@@ -106,7 +106,7 @@ set list
 set listchars=tab:▸\ ,eol:¬,space:\.
 
 " map capital counterparts of commands
-command! Q q
+command! Q qall
 command! QA qall
 command! E e
 command! W w
@@ -116,7 +116,7 @@ command! Wq wq
 set rtp+=~/.vim_configs/UltiSnips/
 
 " Session stuff
-set sessionoptions=blank,curdir,folds,help,tabpages,winpos
+set sessionoptions=blank,curdir,folds,help,tabpages,winpos,buffers
 
 " Auto reload files
 "set autoread

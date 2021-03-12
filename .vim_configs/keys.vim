@@ -22,6 +22,10 @@ noremap <Down> <Nop>
 noremap <Right> <Nop>
 noremap <Left> <Nop>
 
+" Swap ^ with 0
+noremap 0 ^
+noremap ^ 0
+
 " Split panes
 nnoremap <silent> <C-\> <C-w>v<C-w>left
 nnoremap <silent> <leader>- :split<cr>
@@ -100,7 +104,8 @@ nnoremap <C-p> :FZF<CR>
 nnoremap <C-t> :Buffers<CR> 
 
 " Sessions
-nnoremap <leader>s :call SaveSession()<CR>
+"nnoremap <leader>s :call SaveSession()<CR>
+nnoremap <leader>s :SSave<CR>
 
 " Markdown preview
 autocmd FileType markdown noremap <buffer> <leader>v :Preview<CR>
@@ -124,3 +129,9 @@ imap jj <esc>
 
 " TaskWarrior
 nmap <leader>tw :TW<CR>
+
+" Autocomplete enhancements
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'

@@ -26,3 +26,8 @@
 [commit]
 	verbose = true
 	gpgsign = true
+[pull]
+	rebase = false
+	ff = only
+[init]
+	defaultBranch = master
