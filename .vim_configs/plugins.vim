@@ -4,10 +4,6 @@
 
 packadd minpac
 
-if !exists('*minpac#init')
-  finish
-endif
-
 call minpac#init()
 
 " Add or remove your plugins here:
@@ -112,7 +108,7 @@ call minpac#add('sirver/ultisnips')
 call minpac#add('honza/vim-snippets')
 " Auto-Complete!
 call minpac#add('Shougo/deoplete.nvim')
-call minpac#add('zchee/deoplete-go')
+call minpac#add('zchee/deoplete-go', {'do' : 'make'})
 call minpac#add('Shougo/echodoc.vim')
 " vim-scripts repos
 call minpac#add('vim-scripts/L9')
@@ -202,14 +198,33 @@ call minpac#add('junegunn/vim-slash')
 " Dart syntax highlighting
 call minpac#add('dart-lang/dart-vim-plugin')
 
+" Smooth scrolling
+call minpac#add('psliwka/vim-smoothie')
+
 " Wakatime
 call minpac#add('wakatime/vim-wakatime')
+
+" Quickfix window
+call minpac#add('romainl/vim-qf')
+
+" Better commit message buffers
+call minpac#add('rhysd/committia.vim')
+
+" Fade inactive buffers
+call minpac#add('TaDaa/vimade')
+
+" Vuejs 
+call minpac#add('leafOfTree/vim-vue-plugin')
+
+" Jenkinsfile syntax
+call minpac#add('https://github.com/martinda/Jenkinsfile-vim-syntax')
 
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
 filetype plugin indent on     " required!
 
+let g:fzf_def_command = 'rg --files --no-ignore --hidden --follow '
 command! PackUpdate source $MYVIMRC | redraw | call minpac#update()
 command! PackClean  source $MYVIMRC | call minpac#clean()
 

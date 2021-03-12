@@ -84,6 +84,7 @@ let g:startify_session_autoload = 1
 let g:startify_session_savevars = [
       \ 'NERDTreeIgnore',
       \ 'g:ctrlp_user_command',
+      \ 'g:fzf_def_command',
       \ ]
 let g:startify_session_before_save = [
         \ 'echo "Cleaning up before saving.."',
@@ -127,6 +128,8 @@ let g:deoplete#enable_at_startup = 1
 set completeopt=longest,menuone
 set noshowmode
 
+au VimEnter * call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
+
 " Supertab fix backward tab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
@@ -152,3 +155,11 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim_configs/UltiSnips']
 let g:indentLine_concealcursor=""
 let g:vim_json_syntax_conceal = 0 
 
+" Vimade fade
+let g:vimade = {}
+let g:vimade.fadelevel = 0.5
+let g:vimade.detecttermcolors = 1
+let g:vimade.fadepriority = 0
+
+" Vuejs
+let g:vim_vue_plugin_use_sass = 1

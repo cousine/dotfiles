@@ -253,8 +253,7 @@ bindsym $mod+Shift+space exec --no-startup-id $wallpaperswitch
 exec --no-startup-id "xss-lock -- betterlockscreen -l"
 exec --no-startup-id "betterlockscreen -l"
 exec --no-startup-id mpd
-exec --no-startup-id compton
-#exec_always --no-startup-id autorandr --change
+exec --no-startup-id picom
 exec_always --no-startup-id $HOME/bin/wallpaper.zsh -r
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec dex -ae i3
