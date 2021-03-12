@@ -219,6 +219,9 @@ call minpac#add('leafOfTree/vim-vue-plugin')
 " Jenkinsfile syntax
 call minpac#add('https://github.com/martinda/Jenkinsfile-vim-syntax')
 
+" Material color scheme
+call minpac#add('kaicataldo/material.vim')
+
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
