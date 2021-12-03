@@ -1,0 +1,108 @@
+
+* {
+    font            : "Hack Nerd Font 11";
+    cousine0   : #212121;
+    cousine1   : #f07178;
+    cousine2   : #404040;
+    cousine3   : #eeffff;
+
+    cousine4   : #262626;
+    cousine5   : #f07178;
+    cousine6   : #ffcb6b;
+
+    cousine7   : #d19a66;
+    cousine8   : #4b5263;
+    cousine9   : #81a1c1;
+    cousine10  : #5e81ac;
+    cousine11  : #bf616a;
+
+    cousine12  : #d08770;
+    cousine13  : #ebcb8b;
+    cousine14  : #a3be8c;
+    cousine15  : #b48ead;
+
+    background-color    : @cousine0;
+    text-color          : @cousine3;
+
+    margin              : 0;
+}
+#window {
+    location            : center;
+    y-offset            : -150;
+    width               : 600;
+    background-color    : @cousine0;
+    border              : 1;
+    border-color        : @cousine1;
+    border-radius: 5;
+}
+#mainbox {
+    spacing             : 0;
+}
+#inputbar {
+    background-color    : @cousine4;
+    spacing             : 0;
+}
+#prompt {
+    background-color    : @cousine4;
+    font                : "Hack Nerd Font 15";
+    padding             : 12 12 0;
+    vertical-align      : 0;
+    margin              : -8 0 0 -4;
+}
+#entry {
+    padding             : 8 0;
+    background-color    : @cousine4;
+}
+#case-indicator {
+    padding             : 8;
+    background-color    : @cousine4;
+}
+#message {
+    padding             : 0;
+}
+#textbox {
+    padding             : 8;
+    background-color    : @cousine6;
+    text-color          : @cousine0;
+}
+#listview {
+    lines               : 8;
+    columns             : 1;
+    fixed-height        : false;
+    spacing             : 0;
+}
+#element {
+    padding             : 8;
+    spacing             : 8;
+}
+#element normal normal {
+    text-color          : @cousine4;
+}
+#element normal urgent {
+    text-color          : @cousine13;
+}
+#element normal active {
+    text-color          : @cousine8;
+}
+#element selected normal {
+    background-color    : @cousine1;
+    text-color          : @cousine0;
+}
+#element selected urgent {
+    background-color    : @cousine13;
+    text-color          : @cousine0;
+}
+#element selected active {
+    background-color    : @cousine1;
+    text-color          : @cousine0;
+}
+#element-text selected {
+    background-color    : @cousine1;
+    text-color          : @cousine0;
+}
+#element-icon {
+    size                : 0.8em;
+}
+#mode-switcher {
+    padding             : 0;
+}

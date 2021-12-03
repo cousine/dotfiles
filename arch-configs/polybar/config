@@ -50,7 +50,7 @@ font-2 = "SauceCodePro Nerd Font:style=Regular:pixelsize=12.0;1"
 
 modules-left = spotify mpd pulseaudio wlan-activity mobile-status backlight-acpi battery
 modules-center = i3
-modules-right = mobile-usage vpn-openvpn-status wlan docker-status cpu memory displays xkeyboard time 
+modules-right = mobile-usage vpn-wireguard-status wlan docker-status cpu memory displays xkeyboard time 
 
 tray-position = left
 tray-padding = 0
@@ -144,12 +144,10 @@ menu-0-0 = Mobile
 menu-0-0-exec = autorandr -l mobile &
 menu-0-1 = Programming
 menu-0-1-exec = autorandr -l programming &
-menu-0-2 = Programming Above
-menu-0-2-exec = autorandr -l programming_above &
-menu-0-3 = Mirror Office
-menu-0-3-exec = autorandr -l mirror_office &
-menu-0-4 = Mirror Office Yellow
-menu-0-4-exec = autorandr -l mirror_office_yellow &
+menu-0-2 = Programming 2 Screens
+menu-0-2-exec = autorandr -l programming-2-above &
+menu-0-3 = Mirror
+menu-0-3-exec = autorandr -l mirror &
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -399,6 +397,15 @@ interval = 5
 format-prefix = "嬨 "
 format = <label>
 format-prefix-foreground = #61AFEF
+
+[module/vpn-wireguard-status]
+type = custom/script
+exec-if = nmcli --overview connection show cousine-wireguard-vpn | grep "GENERAL.STATE" 
+exec = /home/cousine/.config/polybar/modules/vpn-wireguard-status.sh
+interval = 5
+format-prefix = "聯 "
+format = <label>
+format-prefix-foreground = #C3E88D
 
 [module/docker-status]
 type = custom/script

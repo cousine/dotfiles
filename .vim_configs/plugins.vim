@@ -53,7 +53,9 @@ call minpac#add('junegunn/fzf.vim')
 " Swap windows
 call minpac#add('wesQ3/vim-windowswap') 
 " Auto indent lines
-call minpac#add('Yggdroot/indentLine') 
+call minpac#add('lukas-reineke/indent-blankline.nvim') 
+" SplitJoin single and multiline
+call minpac#add('AndrewRadev/splitjoin.vim')
 " JSON
 call minpac#add('elzr/vim-json')
 " Go
@@ -69,6 +71,8 @@ call minpac#add('lvht/tagbar-markdown')
 call minpac#add('flazz/vim-colorschemes') 
 " Airline bar
 call minpac#add('bling/vim-airline') 
+" Better Buffer line
+call minpac#add('akinsho/nvim-bufferline.lua')
 " Insert auto completion
 call minpac#add('ervandew/supertab') 
 " Color selector in css
@@ -89,6 +93,7 @@ call minpac#add('Shougo/vimproc.vim')
 " Github Completion
 call minpac#add('rhysd/github-complete.vim')
 " Add filetype glyphs
+call minpac#add('kyazdani42/nvim-web-devicons')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
 " Highlight characters on f,F,t,T
@@ -221,6 +226,12 @@ call minpac#add('https://github.com/martinda/Jenkinsfile-vim-syntax')
 
 " Material color scheme
 call minpac#add('kaicataldo/material.vim')
+
+" LSP Client Config
+call minpac#add('neovim/nvim-lspconfig')
+
+" Zenmode
+call minpac#add('kdav5758/TrueZen.nvim')
 
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })

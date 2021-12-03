@@ -5,7 +5,7 @@
 " Airline fonts
 let g:airline_theme='material'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
@@ -164,3 +164,65 @@ let g:vimade.fadepriority = 0
 " Vuejs
 let g:vim_vue_plugin_use_sass = 1
 
+" TrueZen
+lua << EOF
+local true_zen = require("true-zen")
+
+true_zen.setup({
+ui = {
+  left = {
+			number = false,
+			relativenumber = true,
+			signcolumn = "no",
+    }
+  }
+})
+EOF
+
+" Bufferline
+lua << EOF
+require("bufferline").setup{
+  options = {
+    numbers = "buffer_id",
+    separator_style = "slant",
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+    diagnostics = "nvim_lsp",
+    offsets = {
+      {filetype = "nerdtree", text = " NERDTree", highlight = "Directory", text_align = "center"},
+      {filetype = "Mundo", text = "社Mundo", highlight = "Directory", text_align = "center"}
+    },
+    custom_areas = {
+      right = function()
+        local result = {}
+        local error = vim.lsp.diagnostic.get_count(0, [[Error]])
+        local warning = vim.lsp.diagnostic.get_count(0, [[Warning]])
+        local info = vim.lsp.diagnostic.get_count(0, [[Information]])
+        local hint = vim.lsp.diagnostic.get_count(0, [[Hint]])
+
+        if error ~= 0 then
+          table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
+        end
+
+        if warning ~= 0 then
+          table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
+        end
+
+        if hint ~= 0 then
+          table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
+        end
+
+        if info ~= 0 then
+          table.insert(result, {text = "  " .. info, guifg = "#7EA9A7"})
+        end
+        return result
+      end,
+    }
+  }
+}
+EOF
+
+" LSP
+lua << EOF
+require'lspconfig'.gopls.setup{}
+EOF
