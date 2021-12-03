@@ -7,14 +7,17 @@ else
 fi
 
 if [ $vpn_mode = "off" ]; then
-  sudo systemctl start stunnel
-  sudo openvpn --daemon --auth-nocache --cd "/home/cousine/projects/vpn/keys" --config "secure.ovpn"
+  # Old vpn
+  #sudo systemctl start stunnel
+  #sudo openvpn --daemon --auth-nocache --cd "/home/cousine/projects/vpn/keys" --config "secure.ovpn"
+  sudo nmcli connection up cousine-wireguard-vpn
   if [ $? -eq 0 ]; then
     vpn_mode="on"
   fi
 else
-  sudo systemctl stop stunnel.service
-  sudo killall openvpn
+  #sudo systemctl stop stunnel.service
+  #sudo killall openvpn
+  sudo nmcli connection down cousine-wireguard-vpn
   if [ $? -eq 0 ]; then
     vpn_mode="off"
   fi

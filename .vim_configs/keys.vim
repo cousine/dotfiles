@@ -41,8 +41,6 @@ nnoremap <silent> <C-left> :wincmd h<cr>
 nnoremap <silent> <C-down> :wincmd j<cr>
 nnoremap <silent> <C-up> :wincmd k<cr>
 nnoremap <silent> <C-right> :wincmd l<cr>
-" Zoom window
-nnoremap <silent> <leader>z :ZoomToggle<CR>
 
 " Buffer Navigation
 nnoremap <silent> <leader>] :bn<cr>
@@ -135,3 +133,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+" TrueZen
+nnoremap <silent> <leader>z :TZAtaraxis l10 r10 t0 b0<CR>
+nnoremap <silent> <leader>Z :TZFocus<CR>

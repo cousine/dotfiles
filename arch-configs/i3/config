@@ -172,7 +172,7 @@ bindsym $mod+Shift+XF86Launch1 move container to workspace $ws11
 bindsym $mod+Shift+End move container to workspace $ws12
 
 bindsym $mod+Ctrl+Up move workspace to output DP-2
-bindsym $mod+Ctrl+Down move workspace to output eDP-1
+bindsym $mod+Ctrl+Right move workspace to output eDP-1
 bindsym $mod+Ctrl+Left move workspace to output HDMI-1
 
 # Configuration
@@ -250,7 +250,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 # Screenshots
-bindsym Print exec scrot -e 'mv $f ~/Screenshots'
+bindsym Print --release exec scrot -s -e 'mv $f ~/Screenshots'
 # Music
 bindsym $mod+s exec $soundmixer
 # Switch wallpaper
