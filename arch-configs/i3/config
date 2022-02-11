@@ -259,6 +259,9 @@ bindsym $mod+Ctrl+d exec --no-startup-id $HOME/bin/wallpaper.zsh -p
 bindsym $mod+Print exec --no-startup-id "cat /tmp/wallpaper.dat | $HOME/bin/wallpaper.zsh"
 bindsym $mod+Shift+space exec --no-startup-id $wallpaperswitch
 
+# Dunst
+bindsym Shift+space exec --no-startup-id "dunstctl close-all"
+
 # External apps
 exec --no-startup-id "xss-lock -- betterlockscreen -l"
 exec --no-startup-id "betterlockscreen -l"
