@@ -155,5 +155,5 @@ configuration {
   display-walle   : "🖼️";
 }
 
-@theme "themes/cousine-red"
+@theme "themes/sonokai-andromeda.rasi"
 

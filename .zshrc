@@ -112,7 +112,7 @@ alias q="exit"
 
 #export TERM="xterm-256color"
 moji="$(random_emoji_animal_face)"
-BULLETTRAIN_CUSTOM_BG=0
+BULLETTRAIN_CUSTOM_BG=237
 BULLETTRAIN_CUSTOM_MSG=$moji
 BULLETTRAIN_RUBY_FG=255
 BULLETTRAIN_RUBY_BG=1
@@ -129,7 +129,6 @@ BULLETTRAIN_KCTX_KCONFIG=/home/cousine/.kube/config
 BULLETTRAIN_PROMPT_ORDER=(
   custom
   context
-  ruby
   kctx
   dir
   git

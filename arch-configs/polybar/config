@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-include-file=~/.config/polybar/themes/material_darker.conf
+include-file=~/.config/polybar/themes/sonokai_andromeda.conf
 
 [bar/default]
 monitor = "eDP-1"

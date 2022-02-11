@@ -9,9 +9,12 @@ syntax on
 "colorscheme gruvbox
 "colorscheme dracula
 "let g:one_allow_italics = 1
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker' "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
-colorscheme material
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'darker' "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+let g:sonokai_style = 'andromeda'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+colorscheme sonokai
 "set background=darker
 " Material
 

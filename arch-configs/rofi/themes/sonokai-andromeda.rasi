@@ -1,0 +1,114 @@
+
+* {
+    font            : "Hack Nerd Font 11";
+    sonokai0   : #2b2d3a;
+    sonokai1   : #333648;
+    sonokai2   : #363a4e;
+    sonokai3   : #393e53;
+
+    sonokai4   : #3f445b;
+    sonokai5   : #ff6188;
+    sonokai6   : #55393d;
+
+    sonokai7   : #a9dc76;
+    sonokai8   : #394634;
+    sonokai9   : #77d5f0;
+    sonokai10  : #354157;
+    sonokai11  : #4e432f;
+
+    sonokai12  : #e1e3e4;
+
+    sonokai-red      : #fb617e;
+    sonokai-orange   : #f89860;
+    sonokai-yellow   : #edc763;
+    sonokai-green    : #9ed06c;
+    sonokai-blue     : #6dcae8;
+    sonokai-purple   : #bb97ee;
+    sonokai-grey     : #7e8294;
+    sonokai-grey-dim : #5a5e7a;
+
+    background-color    : @sonokai0;
+    text-color          : @sonokai12;
+
+    margin              : 0;
+}
+#window {
+    location            : center;
+    y-offset            : -150;
+    width               : 600;
+    background-color    : @sonokai0;
+    border              : 1;
+    border-color        : @sonokai1;
+    border-radius: 5;
+}
+#mainbox {
+    spacing             : 0;
+}
+#inputbar {
+    background-color    : @sonokai4;
+    spacing             : 0;
+}
+#prompt {
+    background-color    : @sonokai4;
+    font                : "Hack Nerd Font 15";
+    padding             : 12 12 0;
+    vertical-align      : 0;
+    margin              : -8 0 0 -4;
+}
+#entry {
+    padding             : 8 0;
+    background-color    : @sonokai4;
+}
+#case-indicator {
+    padding             : 8;
+    background-color    : @sonokai4;
+}
+#message {
+    padding             : 0;
+}
+#textbox {
+    padding             : 8;
+    background-color    : @sonokai-purple;
+    text-color          : @sonokai0;
+}
+#listview {
+    lines               : 8;
+    columns             : 1;
+    fixed-height        : false;
+    spacing             : 0;
+}
+#element {
+    padding             : 8;
+    spacing             : 8;
+}
+#element normal normal {
+    text-color          : @sonokai4;
+}
+#element normal urgent {
+    text-color          : @sonokai3;
+}
+#element normal active {
+    text-color          : @sonokai8;
+}
+#element selected normal {
+    background-color    : @sonokai1;
+    text-color          : @sonokai0;
+}
+#element selected urgent {
+    background-color    : @sonokai3;
+    text-color          : @sonokai0;
+}
+#element selected active {
+    background-color    : @sonokai1;
+    text-color          : @sonokai12;
+}
+#element-text selected {
+    background-color    : @sonokai1;
+    text-color          : @sonokai12;
+}
+#element-icon {
+    size                : 0.8em;
+}
+#mode-switcher {
+    padding             : 0;
+}
