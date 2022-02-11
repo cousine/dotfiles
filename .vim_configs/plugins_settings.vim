@@ -3,7 +3,7 @@
 " ========================================================================
 
 " Airline fonts
-let g:airline_theme='material'
+let g:airline_theme='sonokai'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_left_sep = ''
@@ -109,6 +109,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " Vim Go
 set rtp +=$GOPATH/src/github.com/golang/lint/misc/vim
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 " GoLint
 autocmd FileType go nmap <C-b>  <Plug>(go-build)
 autocmd FileType go nmap <C-i>  <Plug>(go-imports)
@@ -123,15 +125,15 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 
 
 " Enable deoplete
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 "set completeopt-=preview
-set completeopt=longest,menuone
+set completeopt=menu,menuone,noselect " longest,menuone
 set noshowmode
 
-au VimEnter * call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
+"au VimEnter * call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
 " Supertab fix backward tab
-let g:SuperTabDefaultCompletionType = "<c-n>"
+"let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " FuzzyFinder fzf
 let g:fzf_layout = { 'window': '10 split | enew' }
@@ -179,50 +181,136 @@ ui = {
 })
 EOF
 
-" Bufferline
 lua << EOF
-require("bufferline").setup{
-  options = {
-    numbers = "buffer_id",
-    separator_style = "slant",
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    diagnostics = "nvim_lsp",
-    offsets = {
-      {filetype = "nerdtree", text = " NERDTree", highlight = "Directory", text_align = "center"},
-      {filetype = "Mundo", text = "社Mundo", highlight = "Directory", text_align = "center"}
-    },
-    custom_areas = {
-      right = function()
-        local result = {}
-        local error = vim.diagnostic.get(0, [[Error]])
-        local warning = vim.diagnostic.get(0, [[Warning]])
-        local info = vim.diagnostic.get(0, [[Information]])
-        local hint = vim.diagnostic.get(0, [[Hint]])
+  -- Bufferline
+  require("bufferline").setup{
+    options = {
+      numbers = "buffer_id",
+      separator_style = "slant",
+      show_buffer_close_icons = false,
+      show_close_icon = false,
+      diagnostics = "nvim_lsp",
+      offsets = {
+        {filetype = "nerdtree", text = " NERDTree", highlight = "Directory", text_align = "center"},
+        {filetype = "Mundo", text = "社Mundo", highlight = "Directory", text_align = "center"}
+      },
+      custom_areas = {
+        right = function()
+          local result = {}
+          local error = vim.diagnostic.get(0, [[Error]])
+          local warning = vim.diagnostic.get(0, [[Warning]])
+          local info = vim.diagnostic.get(0, [[Information]])
+          local hint = vim.diagnostic.get(0, [[Hint]])
 
-        if error ~= 0 then
-          table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
-        end
+          if error ~= 0 then
+            table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
+          end
 
-        if warning ~= 0 then
-          table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
-        end
+          if warning ~= 0 then
+            table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
+          end
 
-        if hint ~= 0 then
-          table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
-        end
+          if hint ~= 0 then
+            table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
+          end
 
-        if info ~= 0 then
-          table.insert(result, {text = "  " .. info, guifg = "#7EA9A7"})
-        end
-        return result
-      end,
+          if info ~= 0 then
+            table.insert(result, {text = "  " .. info, guifg = "#7EA9A7"})
+          end
+          return result
+        end,
+      }
     }
   }
-}
-EOF
 
-" LSP
-lua << EOF
-require'lspconfig'.gopls.setup{}
+  -- LSP Kind
+  local lspkind = require('lspkind')
+
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
+    mapping = {
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        elseif has_words_before() then
+          cmp.complete()
+        else
+          fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+        end
+      end, { "i", "s" }),
+
+      ["<S-Tab>"] = cmp.mapping(function()
+        if cmp.visible() then
+          cmp.select_prev_item()
+        end
+      end, { "i", "s" }),
+
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    },
+    formatting = {
+      format = lspkind.cmp_format {
+        with_text = true,
+        menu = {
+          buffer   = "[buf]",
+          nvim_lsp = "[LSP]",
+          path     = "[path]",
+        },
+      },
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'ultisnips' }, -- For ultisnips users.
+    }, {
+      { name = 'buffer' },
+    }),
+    experimental = {
+      ghost_text = true
+    }
+  })
+
+  -- Set configuration for specific filetype.
+  cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it. 
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+
+  -- Setup lspconfig.
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+  -- LSP Servers
+  require'lspconfig'.gopls.setup{}
 EOF

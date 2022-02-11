@@ -74,7 +74,7 @@ call minpac#add('bling/vim-airline')
 " Better Buffer line
 call minpac#add('akinsho/nvim-bufferline.lua')
 " Insert auto completion
-call minpac#add('ervandew/supertab') 
+"call minpac#add('ervandew/supertab') 
 " Color selector in css
 call minpac#add('ap/vim-css-color') 
 " Retro color scheme
@@ -112,9 +112,14 @@ call minpac#add('isundil/vim-irssi-syntax')
 call minpac#add('sirver/ultisnips')
 call minpac#add('honza/vim-snippets')
 " Auto-Complete!
-call minpac#add('Shougo/deoplete.nvim')
-call minpac#add('zchee/deoplete-go', {'do' : 'make'})
-call minpac#add('Shougo/echodoc.vim')
+" call minpac#add('Shougo/deoplete.nvim')
+" call minpac#add('zchee/deoplete-go', {'do' : 'make'})
+" call minpac#add('Shougo/echodoc.vim')
+
+call minpac#add('hrsh7th/cmp-nvim-lsp')
+call minpac#add('hrsh7th/cmp-buffer')
+call minpac#add('hrsh7th/nvim-cmp')
+call minpac#add('quangnguyen30192/cmp-nvim-ultisnips')
 " vim-scripts repos
 call minpac#add('vim-scripts/L9')
 call minpac#add('vim-scripts/surround.vim')
@@ -230,8 +235,14 @@ call minpac#add('kaicataldo/material.vim')
 " LSP Client Config
 call minpac#add('neovim/nvim-lspconfig')
 
+" LSP Kind Icons
+call minpac#add('onsails/lspkind-nvim')
+
 " Zenmode
 call minpac#add('kdav5758/TrueZen.nvim')
+
+" Sonokai theme
+call minpac#add('sainnhe/sonokai')
 
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })

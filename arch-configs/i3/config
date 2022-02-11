@@ -16,14 +16,22 @@ set $networkmanager "kitty --name=__nmtui nmtui"
 
 # Colors
 # class 		border	backgr.	text	indic.	child_border
-# Material Darker
-client.focused          #f07178 #f07178 #212121 #212121
-client.focused_inactive #282c34 #282c34 #abb2bf #282c34
-client.unfocused        #222222 #222222 #abb2bf #4b4263
-client.urgent           #be5046 #be5046 #abb2bf #268BD2
-client.placeholder      #222222 #4b5263 #abb2bf #222222 #4b5263
+# Sonokai-Andromeda
+client.focused          #bb97ee #bb97ee #2b2d3a #2b2d3a
+client.focused_inactive #3f445b #3f445b #e1e3e4 #3f445b
+client.unfocused        #3f445b #3f445b #e1e3e4 #3f445b
+client.urgent           #ff6188 #ff6188 #e1e3e4 #268BD2
+client.placeholder      #222222 #4b5263 #e1e3e4 #222222 #4b5263
 
-client.background 	#212121
+client.background 	#2b2d3a
+# Material Darker
+#client.focused          #f07178 #f07178 #212121 #212121
+#client.focused_inactive #282c34 #282c34 #abb2bf #282c34
+#client.unfocused        #222222 #222222 #abb2bf #4b4263
+#client.urgent           #be5046 #be5046 #abb2bf #268BD2
+#client.placeholder      #222222 #4b5263 #abb2bf #222222 #4b5263
+
+#client.background 	#212121
 
 # OneDark
 #client.focused          #d19a66 #d19a66 #282c34 #282c34
