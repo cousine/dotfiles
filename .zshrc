@@ -69,6 +69,7 @@ plugins=(
   zsh-interactive-cd
   zsh-completions
   zsh-autosuggestions
+  zsh-syntax-highlighting
   zsh-tmux-rename
   taskwarrior
   emoji
@@ -137,7 +138,7 @@ BULLETTRAIN_PROMPT_ORDER=(
 
 PROJECT_PATHS=(~/projects)
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 export TERMINFO=~/.terminfo
 

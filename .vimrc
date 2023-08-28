@@ -17,6 +17,9 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
+" Change <leader> key
+let mapleader = ","
+
 " ========================================================================
 " Load Python
 " ========================================================================

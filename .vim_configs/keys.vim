@@ -2,9 +2,6 @@
 " KEY MAPPINGS
 " ========================================================================
 
-" Change <leader> key
-let mapleader = ","
-
 " Fix keycodes for Ctrl + Arrows
 map <ESC>[1;5A <C-Up>
 map <ESC>[1;5B <C-Down>
@@ -12,9 +9,9 @@ map <ESC>[1;5D <C-Left>
 map <ESC>[1;5C <C-Right>
 
 " Ctrl + N for NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :silent! NERDTreeToggle<CR>
 " Find in nerdtree
-nmap ,f :NERDTreeFind<CR>
+nmap ,f :silent! NERDTreeFind<CR>
 
 " Hard mode
 noremap <Up> <Nop>

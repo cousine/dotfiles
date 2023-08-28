@@ -19,7 +19,7 @@ run_segment() {
 
   # 1. Get prayer Times
   if [ ! -f $prayer_file ] ; then
-    prayers_data="$(curl -s "${ENDPOINT}")"
+    prayers_data="$(curl -Lks "${ENDPOINT}")"
     code="$(echo ${prayers_data} | jq .code )"
 
     # Save prayers only if request succeeds
@@ -37,11 +37,15 @@ run_segment() {
   prayers=($(echo "${prayers_data}" | jq -r ".data.timings[]"))
   prayer_titles=($(echo "${prayers_data}" | jq -r ".data.timings | keys_unsorted[]"))
 
-  # 3. Remove Sunset, Midnight and Imsak
+  # 3. Remove Sunset, Midnight, Lasthird, Firstthird, and Imsak
+  unset 'prayers[${#prayers[@]}-1]'
+  unset 'prayers[${#prayers[@]}-1]'
   unset 'prayers[${#prayers[@]}-1]'
   unset 'prayers[${#prayers[@]}-1]'
   unset 'prayers[${#prayers[@]}-3]'
 
+  unset 'prayer_titles[${#prayer_titles[@]}-1]'
+  unset 'prayer_titles[${#prayer_titles[@]}-1]'
   unset 'prayer_titles[${#prayer_titles[@]}-1]'
   unset 'prayer_titles[${#prayer_titles[@]}-1]'
   unset 'prayer_titles[${#prayer_titles[@]}-3]'
@@ -74,3 +78,4 @@ run_segment() {
   return 0
 }
 
+"$@"

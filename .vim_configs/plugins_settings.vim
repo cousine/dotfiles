@@ -111,10 +111,12 @@ let g:go_highlight_build_constraints = 1
 set rtp +=$GOPATH/src/github.com/golang/lint/misc/vim
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:go_fmt_options = {
+      \ 'gofmt': '-s',
+      \ }
 " GoLint
 autocmd FileType go nmap <C-b>  <Plug>(go-build)
 autocmd FileType go nmap <C-i>  <Plug>(go-imports)
-autocmd FileType go nmap <C-l> :Lint<CR>:cwindow<CR>
 
 
 " markdown preview
@@ -227,6 +229,11 @@ lua << EOF
   local lspkind = require('lspkind')
 
   -- Setup nvim-cmp.
+  local has_words_before = function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  end
+
   local cmp = require'cmp'
 
   cmp.setup({
@@ -309,8 +316,43 @@ lua << EOF
   })
 
   -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
   -- LSP Servers
-  require'lspconfig'.gopls.setup{}
+  lspconfig = require'lspconfig'
+  -- GO
+  lspconfig.gopls.setup{}
+  -- Typescript
+  lspconfig.tsserver.setup {
+    before_init = function(params)
+      params.processId = vim.NIL
+    end,
+    cmd = require'lspcontainers'.command('tsserver', {
+      container_runtime = "podman",
+    }),
+    root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+  }
+  -- Lua
+  lspconfig.lua_ls.setup {
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = 'LuaJIT',
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {'vim'},
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
+        },
+      },
+    },
+  }
 EOF

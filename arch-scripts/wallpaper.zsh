@@ -33,7 +33,15 @@ setWallpaper()
         xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- feh --bg-fill $1 &
       fi
     else
-      xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- feh --bg-fill $1 &
+      if [[ $extension = "gif" ]]; then
+        if [[ $monitor_name = "DP-2" ]] then
+          xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- mpv -wid WID --keepaspect=no --loop $1 &
+        else
+          xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- feh --bg-fill $1 &
+        fi
+      else
+        xwinwrap -g ${width}x${height}+${xpos}+${ypos} -ov -ni -- feh --bg-fill $1 &
+      fi
     fi
   done
 }
