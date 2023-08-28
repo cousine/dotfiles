@@ -88,14 +88,13 @@ call minpac#add('benmills/vimux')
 " Align text easily
 call minpac#add('godlygeek/tabular')
 " Markdown stuff
-call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' })
+call minpac#add('iamcco/markdown-preview.nvim', {'do': 'packloadall! | call mkdp#util#install()'})
 call minpac#add('Shougo/vimproc.vim')
 " Github Completion
 call minpac#add('rhysd/github-complete.vim')
 " Add filetype glyphs
 call minpac#add('kyazdani42/nvim-web-devicons')
 call minpac#add('ryanoasis/vim-devicons')
-call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
 " Highlight characters on f,F,t,T
 call minpac#add('unblevable/quick-scope')
 " Interactive shell in vim
@@ -235,6 +234,9 @@ call minpac#add('kaicataldo/material.vim')
 " LSP Client Config
 call minpac#add('neovim/nvim-lspconfig')
 
+" LSP server in container
+call minpac#add('lspcontainers/lspcontainers.nvim')
+
 " LSP Kind Icons
 call minpac#add('onsails/lspkind-nvim')
 
@@ -243,6 +245,9 @@ call minpac#add('kdav5758/TrueZen.nvim')
 
 " Sonokai theme
 call minpac#add('sainnhe/sonokai')
+
+" mdx syntax highlighting
+call minpac#add('findango/vim-mdx')
 
 " Minpac
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
