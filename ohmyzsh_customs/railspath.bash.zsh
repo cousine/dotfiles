@@ -1,2 +1,0 @@
-RAILSSRC=$PROJECTS/rails
-

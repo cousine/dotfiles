@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/projects/dotfiles/cousine-dotfiles/ohmyzsh_customs
+ZSH_CUSTOM=$HOME/Projects/dotfiles/ohmyzsh_customs/
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -136,14 +136,14 @@ BULLETTRAIN_PROMPT_ORDER=(
   status
 )
 
-PROJECT_PATHS=(~/projects)
+PROJECT_PATHS=(~/Projects)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
-export TERMINFO=~/.terminfo
+# export TERMINFO=~/.terminfo
 
 
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
-[ -s "/home/cousine/.scm_breeze/scm_breeze.sh" ] && source "/home/cousine/.scm_breeze/scm_breeze.sh"
+[ -s "/Users/cousine/.scm_breeze/scm_breeze.sh" ] && source "/Users/cousine/.scm_breeze/scm_breeze.sh"

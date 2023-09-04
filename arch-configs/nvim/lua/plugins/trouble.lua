@@ -8,7 +8,7 @@ return {
   --   },
   -- },
   {
-    dir = "~/projects/neovim/trouble.nvim",
+    dir = "~/Projects/neovim/trouble.nvim",
     dev = true,
     opts = {
       auto_open = { vim.diagnostic.severity.ERROR },
