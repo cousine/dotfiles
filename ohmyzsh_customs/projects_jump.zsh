@@ -1,4 +1,4 @@
-export PROJECTS=$HOME/projects
+export PROJECTS=$HOME/Projects
 
 cj() {    
   if [[ $# -gt 0 ]]; then
