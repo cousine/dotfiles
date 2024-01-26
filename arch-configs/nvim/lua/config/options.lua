@@ -5,3 +5,5 @@
 vim.g.mapleader = ","
 vim.opt.winbar = "%=%m %f"
 vim.o.exrc = true
+
+vim.g.show_coverage = false
