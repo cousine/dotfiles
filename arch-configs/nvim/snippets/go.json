@@ -1,0 +1,7 @@
+{
+  "testify function": {
+    "prefix": "tsf",
+    "body": "func (s *$1) Test_$2() {\n\t$0\n}",
+    "description": "Snippet for testify Test function"
+  }
+}

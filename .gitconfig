@@ -1,6 +1,6 @@
 [user]
 	name = Omar Mekky
-	email = alphaengine@gmail.com
+	email = omar@payrails.com
 	signingkey = 410E398C78648A32
 [github]
 	user = cousine
@@ -33,3 +33,8 @@
 	defaultBranch = master
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

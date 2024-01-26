@@ -1,6 +1,9 @@
 {
   "extras": [
-
+    "lazyvim.plugins.extras.editor.symbols-outline",
+    "lazyvim.plugins.extras.lang.docker",
+    "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.ui.edgy"
   ],
   "news": {
     "NEWS.md": "2123"
