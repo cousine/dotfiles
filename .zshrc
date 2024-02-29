@@ -60,7 +60,6 @@ ZSH_CUSTOM=$HOME/Projects/dotfiles/ohmyzsh_customs/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  bundler
   #rails
   colorize
   colored-man-pages
@@ -73,6 +72,7 @@ plugins=(
   zsh-tmux-rename
   taskwarrior
   emoji
+  kubectl
 )
 
 fpath=($ZSH_CUSTOM/completions $fpath)
@@ -123,20 +123,22 @@ BULLETTRAIN_CONTEXT_BG=8
 BULLETTRAIN_GIT_BG=255
 BULLETTRAIN_STATUS_BG=1
 BULLETTRAIN_STATUS_FG=255
+BULLETTRAIN_KCTX_KUBECTL=true
 BULLETTRAIN_KCTX_BG=255
 BULLETTRAIN_KCTX_FG=0
 BULLETTRAIN_KCTX_PREFIX=⚓
-BULLETTRAIN_KCTX_KCONFIG=/home/cousine/.kube/config
+BULLETTRAIN_KCTX_KCONFIG=$HOME/.kube/config
 BULLETTRAIN_PROMPT_ORDER=(
   custom
   context
   kctx
+  go
   dir
   git
   status
 )
 
-PROJECT_PATHS=(~/Projects)
+PROJECT_PATHS=($HOME/Projects)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
