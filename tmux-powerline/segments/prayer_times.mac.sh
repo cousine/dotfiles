@@ -1,7 +1,7 @@
 run_segment() {
 	ICON_FAJR=""
 	ICON_SUNRISE=""
-	ICON_DHUHR="盛"
+	ICON_DHUHR="󰖨"
 	ICON_ASR=""
 	ICON_MAGHRIB=""
 	ICON_ISHA=""
@@ -70,7 +70,7 @@ run_segment() {
 	# 6. Calculate time left till next prayer
 	next_prayer_stamp=$(date -j -f "%H:%M" ${prayers[$next_prayer]} +%s)
 	difference=$((next_prayer_stamp - current_timestamp))
-	countdown=$(date -j -v"+$((difference))S" +"%H:%M")
+	countdown=$(date -j -u -f %s "$((difference))S" +"%H:%M")
 
 	echo "${ICONS[$next_prayer]} ${prayer_titles[$next_prayer]} ${countdown}"
 

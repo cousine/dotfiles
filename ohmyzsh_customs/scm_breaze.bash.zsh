@@ -1,4 +1,4 @@
-alias gh=git_aliases
+alias gghelp=git_aliases
 alias gccl=git_clone_clipboard
 
 # Clone url currently in clipboard

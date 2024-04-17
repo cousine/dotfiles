@@ -73,7 +73,7 @@ plugins=(
   taskwarrior
   emoji
   kubectl
-)
+ gh jira)
 
 fpath=($ZSH_CUSTOM/completions $fpath)
 
@@ -128,7 +128,6 @@ BULLETTRAIN_PROMPT_ORDER=(
   custom
   context
   kctx
-  go
   dir
   git
   status

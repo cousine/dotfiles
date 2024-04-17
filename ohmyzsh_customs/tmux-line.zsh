@@ -1,0 +1,4 @@
+export TMUX_POWERLINE_DIR_LIB=~/Projects/dotfiles/tmux-powerline/lib
+export TMUX_POWERLINE_SEG_WEATHER_LOCATION="1521894"
+export TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER="spotify"
+

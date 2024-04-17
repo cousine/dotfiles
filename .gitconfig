@@ -24,7 +24,7 @@
 [diff "sopsdiffer"]
 	textconv = sops -d
 [commit]
-	verbose = true
+	verbose = false
 	gpgsign = true
 [pull]
 	rebase = false

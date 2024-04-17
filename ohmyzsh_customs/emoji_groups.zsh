@@ -12,8 +12,6 @@ emoji_groups[animal_faces]="
   cat_face
   monkey_face
   dog_face
-  hamster_face
-  bear_face
 "
 
 function random_emoji_animal_face() {

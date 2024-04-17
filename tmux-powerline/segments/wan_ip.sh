@@ -7,7 +7,7 @@ run_segment() {
 	if [ -f "$tmp_file" ]; then
 		if shell_is_osx || shell_is_bsd; then
 			stat >/dev/null 2>&1 && is_gnu_stat=false || is_gnu_stat=true
-			if [ "$is_gnu_stat" == "true" ];then
+			if [ "$is_gnu_stat" == "true" ]; then
 				last_update=$(stat -c "%Y" ${tmp_file})
 			else
 				last_update=$(stat -f "%m" ${tmp_file})
@@ -29,7 +29,7 @@ run_segment() {
 		wan_ip=$(curl --max-time 2 -s http://whatismyip.akamai.com/)
 
 		if [ "$?" -eq "0" ]; then
-			echo "${wan_ip}" > $tmp_file
+			echo "${wan_ip}" >$tmp_file
 		elif [ -f "${tmp_file}" ]; then
 			wan_ip=$(cat "$tmp_file")
 		fi

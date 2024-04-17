@@ -66,6 +66,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 			#"rainbarf 0 0" \
 			#"xkb_layout 125 117" \
 			"prayer_times.mac 2 0"
+			"now_playing 13 17"
 			"date_day 4 17"
 			"date 4 17 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 			"time 4 17 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
