@@ -77,6 +77,7 @@ plugins=(
 
 fpath=($ZSH_CUSTOM/completions $fpath)
 
+zstyle ':omz:alpha:lib:git' async-prompt no 
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
