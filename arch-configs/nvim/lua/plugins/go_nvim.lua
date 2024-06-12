@@ -2,7 +2,9 @@ return {
   {
     "ray-x/go.nvim",
     config = function()
-      require("go").setup()
+      require("go").setup({
+        diagnostic = false, -- messes up neovim 0.10
+      })
     end,
     dependencies = {
       "ray-x/guihua.lua",

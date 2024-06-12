@@ -27,3 +27,12 @@ vim.keymap.set("n", "<leader>q", ":bdelete<CR>", { silent = true, noremap = true
 
 -- Escape insert mode on jj
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Escape insert mode on jj" })
+
+-- tmux-neovim-navigation
+local nvim_tmux_nav = require("nvim-tmux-navigation")
+vim.keymap.set("n", "<M-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+vim.keymap.set("n", "<M-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+vim.keymap.set("n", "<M-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+vim.keymap.set("n", "<M-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)

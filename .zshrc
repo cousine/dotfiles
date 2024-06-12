@@ -73,7 +73,7 @@ plugins=(
   taskwarrior
   emoji
   kubectl
- gh jira)
+ gh jira python)
 
 fpath=($ZSH_CUSTOM/completions $fpath)
 
