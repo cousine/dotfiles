@@ -36,3 +36,6 @@ vim.keymap.set("n", "<M-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
 vim.keymap.set("n", "<M-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
 vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
 vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
+-- Neotree custom navigation
+vim.keymap.set("n", "<leader>.", ":Neotree filesystem reveal<CR>", { silent = true, desc = "Jump to file in Neotree" })
