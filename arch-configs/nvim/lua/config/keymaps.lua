@@ -13,6 +13,12 @@ vim.keymap.set("n", "0", "^")
 vim.keymap.set("n", "^", "0")
 
 -- Save on double Esc
+vim.keymap.set(
+  "n",
+  "<leader><esc>",
+  "<cmd>lua vim.api.nvim_buf_clear_namespace(0, -1, 0, -1)<CR><esc>",
+  { desc = "Escape and Clear duplicate Highlights" }
+)
 vim.keymap.set("", "<Esc><Esc>", ":w<CR>", { desc = "Save file" })
 
 -- Splits
@@ -39,3 +45,19 @@ vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
 -- Neotree custom navigation
 vim.keymap.set("n", "<leader>.", ":Neotree filesystem reveal<CR>", { silent = true, desc = "Jump to file in Neotree" })
+
+-- InsertCeneterdTitleComment
+vim.keymap.set(
+  "n",
+  "<leader>ct",
+  ":lua InsertCenteredTitleComment()<CR>",
+  { noremap = true, silent = true, desc = "Insert a horizontal line with a title centered" }
+)
+
+-- InsertCeneterdTitleComment
+vim.keymap.set(
+  "n",
+  "<leader>sdd",
+  ":lua ToggleHighlightDuplicates()<CR>",
+  { noremap = true, silent = true, desc = "Highlights duplicate lines" }
+)

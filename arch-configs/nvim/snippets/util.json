@@ -1,0 +1,11 @@
+{
+  "box title": {
+    "prefix": "boxcom",
+    "body": [
+      "$LINE_COMMENT ---${1/./-/g}---",
+      "$LINE_COMMENT -  ${1}  -",
+      "$LINE_COMMENT ---${1/./-/g}---"
+    ],
+    "description": "Snippet for testify Test function"
+  }
+}
