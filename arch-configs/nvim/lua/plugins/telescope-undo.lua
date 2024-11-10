@@ -9,7 +9,7 @@ return {
     {
       "<leader>uu",
       "<cmd>Telescope undo<cr>",
-      desc = "Coverage Toggle",
+      desc = "Telescope undo history",
     },
   },
   config = function()
