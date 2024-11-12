@@ -1,7 +1,22 @@
 {
+  "Scaffold Testify Suite": {
+    "prefix": "Scaffold Testify Suite",
+    "body": [
+      "type Suite${1:Name} struct {",
+      "\tsuite.Suite",
+      "}",
+      "",
+      "// ----------------------------------------------------------------------------",
+      "",
+      "func TestSuite${1:Name}(t *testing.T) {",
+      "\tsuite.Run(t, new(Suite${1:Name}))",
+      "}"
+    ]
+  },
   "testify function": {
     "prefix": "tsf",
     "body": "func (s *$1) Test_$2() {\n\t$0\n}",
     "description": "Snippet for testify Test function"
   }
 }
+
