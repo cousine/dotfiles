@@ -61,3 +61,19 @@ vim.keymap.set(
   ":lua ToggleHighlightDuplicates()<CR>",
   { noremap = true, silent = true, desc = "Highlights duplicate lines" }
 )
+
+-- Toggle comment style
+vim.keymap.set(
+  "v",
+  "<leader>ct",
+  ":lua ToggleCommentStyle()<CR>",
+  { noremap = true, silent = true, desc = "Toggle line comment style between inline and previous line" }
+)
+
+-- Run semgrep
+vim.keymap.set(
+  "n",
+  "<leader>cg",
+  ":lua RunSemgrepInTrouble()<CR>",
+  { noremap = true, silent = true, desc = "Run semgrep and show results in trouble" }
+)
