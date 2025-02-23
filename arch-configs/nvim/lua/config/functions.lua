@@ -158,13 +158,14 @@ function RunSemgrepInTrouble()
   -- Get the current file name
   local file = vim.fn.expand("%")
   local spinner = require("custom.spinner")
+  local semgrep_command = _G.SemgrepCMD or "semgrep -q --config auto --json"
 
   spinner.show({
     row = vim.o.lines - 2,
   }, "Running Semgrep...")
 
   -- Run semgrep command on the current file asynchronously
-  local command = "semgrep -q --config auto --json " .. file
+  local command = semgrep_command .. " " .. file
   local output = {}
 
   -- Run semgrep asynchronously with jobstart
@@ -190,9 +191,10 @@ function RunSemgrepInTrouble()
         if ok and result and result.results then
           -- Extract relevant information from semgrep output
           for _, finding in ipairs(result.results) do
-            local start_line = finding.start and finding.start.line or 0
-            local start_col = finding.start and finding.start.col or 0
-            local severity = vim.diagnostic.severity[finding.severity]
+            print(vim.inspect(finding))
+            local start_line = (finding.start and finding.start.line or 1) - 1
+            local start_col = (finding.start and finding.start.col or 1) - 1
+            local severity = vim.diagnostic.severity[finding.extra.severity]
             local message = finding.extra and finding.extra.message or "No message"
 
             table.insert(diagnostics, {

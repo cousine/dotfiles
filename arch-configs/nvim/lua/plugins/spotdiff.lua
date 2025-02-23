@@ -1,0 +1,3 @@
+return {
+  "rickhowe/spotdiff.vim",
+}

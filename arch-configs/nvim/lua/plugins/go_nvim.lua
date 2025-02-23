@@ -4,6 +4,7 @@ return {
     config = function()
       require("go").setup({
         diagnostic = false, -- messes up neovim 0.10
+        remap_commands = { GoDoc = false },
       })
     end,
     dependencies = {
