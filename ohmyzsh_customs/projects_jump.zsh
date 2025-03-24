@@ -1,5 +1,3 @@
-export PROJECTS=$HOME/Projects
-
 cj() {    
   if [[ $# -gt 0 ]]; then
     local _path directories
@@ -9,11 +7,11 @@ cj() {
       directories[1]="go/src"
     fi
 
-    _path="$PROJECTS/${(j:/:)directories}"
+    _path="$PROJECT_PATHS/${(j:/:)directories}"
 
     cd $_path
   else
-    cd $PROJECTS
+    cd $PROJECT_PATHS
   fi
 }
 

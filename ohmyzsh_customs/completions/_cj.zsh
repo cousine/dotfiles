@@ -1,7 +1,7 @@
 #compdef cj
 
 _cj() {
-  local state directories _real_path _path=$PROJECTS
+  local state directories _real_path _path=$PROJECT_PATHS
 
   _arguments \
     '1: :->proj_stack'\
@@ -11,7 +11,7 @@ _cj() {
 
   case $state in
     proj_stack)
-      _multi_parts " " "($(ls -l $PROJECTS | grep '^d' | sed -e 's/^.* //g' | tr '\n' ' '))"
+      _multi_parts " " "($(ls -l $PROJECT_PATHS | grep '^d' | sed -e 's/^.* //g' | tr '\n' ' '))"
       ;;
     *) 
       if [[ $directories[1] = "go" && $CURRENT -gt 2 ]]; then
@@ -22,7 +22,7 @@ _cj() {
         unset "directories[${#directories[@]-1}]"
       fi
 
-      _path="$PROJECTS/${(j:/:)directories}"
+      _path="$PROJECT_PATHS/${(j:/:)directories}"
 
       _multi_parts " " "($(ls -l $_path | grep '^d' | sed -e 's/^.* //g' | tr '\n' ' '))"
       ;;
