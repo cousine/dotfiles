@@ -15,10 +15,10 @@
 # @raycast.author Omar Mekky
 # @raycast.authorURL https://cousine.me
 
-SESSION_NAME="main"
+export SESSION_NAME="main"
 
 if [[ -n $1 ]]; then
   SESSION_NAME=$1
 fi
 
-kitty --start-as=fullscreen tmux new-session -A -s "cousine-$SESSION_NAME"
+kitty --start-as=fullscreen tmux -L "$SESSION_NAME" new-session -A -s "cousine-$SESSION_NAME"
